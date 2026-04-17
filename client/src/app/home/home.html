@@ -1,0 +1,13 @@
+<p>home works!</p>
+<dropdown [http]="http" [formField]="f.customer" (left)="left($event)" (self)="textbox($event)">
+   <ng-container head>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Email</th>
+   </ng-container>
+   <ng-template #row let-customer>
+      <td class="name">{{customer.name}}</td>
+      <td class="phone">{{customer.phone}}</td>
+      <td class="email">{{customer.email}}</td>
+   </ng-template>
+</dropdown>

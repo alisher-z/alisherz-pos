@@ -1,0 +1,16 @@
+:host(:not([class])) {
+    display: flex;
+    flex-direction: column;
+}
+
+// :is(input[type="text"], input[type="email"], textarea) {
+//     background: none;
+//     border: none;
+//     outline: none;
+// }
+:read-write {
+    background: none;
+    border: none;
+    outline: none;
+    width: 100%;
+}

@@ -1,0 +1,9 @@
+<form-input-blackbox [tree]="form" [btn]="false">
+   <ng-container>
+      <service-self-dropbox [field]="form.service" (selection)="select($event)" />
+      <number label="Price" [disabled]="true" [(value)]="price" />
+      <durationz label="Duration" [formField]="form.duration" (live)="onDuration($event)" />
+      <number label="Total" [disabled]="true" [value]="total()" />
+      <note label="Notes" [formField]="form.notes" />
+   </ng-container>
+</form-input-blackbox>

@@ -1,0 +1,26 @@
+:host {
+    display: flex;
+    margin-top: 1px;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background);
+    padding: 1rem;
+    border-radius: 3px;
+    box-shadow: 0 3px 5px rgba(black, .3);
+    color: red;
+}
+
+li {
+    display: flex;
+    align-items: center;
+
+    &::before {
+        content: "-";
+        line-height: 1;
+        padding-right: 5px;
+        font-size: 1.8rem;
+    }
+}

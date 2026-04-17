@@ -1,0 +1,24 @@
+@let details = items|items:products();
+
+<gridviewz 
+   [list]="details?.items??null" 
+   (edit)="edit($event)" 
+   (del)="delete($event)"
+>
+   <ng-container header>
+      <th>Product</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Total</th>
+   </ng-container>
+   <ng-template #row let-item>
+      <td>{{item.product}}</td>
+      <td>{{item.price}}</td>
+      <td>{{item.quantity}}</td>
+      <td>{{item.total}}</td>
+   </ng-template>
+   <ng-container footer>
+      <td colspan="3">Total</td>
+      <td>{{details?.total??0}}</td>
+   </ng-container>
+</gridviewz>

@@ -1,0 +1,50 @@
+:host {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 3px;
+   width: max-content;
+}
+
+header {
+   display: flex;
+   align-items: center;
+
+   button {
+      font-weight: 500;
+      font-size: 1.5rem;
+      width: 5rem;
+   }
+}
+
+main {
+   display: flex;
+   flex-direction: column;
+   padding: 4px;
+   padding-right: 0;
+   min-height: 3rem;
+   max-height: 17rem;
+   overflow: hidden;
+   overflow-y: auto;
+   border-radius: 3px;
+   width: 100%;
+   background-color: var(--background);
+}
+
+button {
+   line-height: 1;
+   margin-bottom: 1px;
+   border: none;
+   background: none;
+   padding: .5rem;
+   border-radius: 3px;
+   cursor: pointer;
+
+   &:hover {
+      background-color: var(--hover-background);
+   }
+
+   &.active {
+      background-color: var(--hover-background);
+   }
+}

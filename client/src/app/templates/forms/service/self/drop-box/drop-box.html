@@ -1,0 +1,5 @@
+<drop-box [label]="label()??'Service'" [list]="list" [formField]="field_" (live)="selection.emit($event)">
+   <ng-template #row let-service>
+      <td [innerHTML]="service['marked']"></td>
+   </ng-template>
+</drop-box>

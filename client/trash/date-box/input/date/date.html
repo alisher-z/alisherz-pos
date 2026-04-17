@@ -1,0 +1,31 @@
+@if(focused()){
+    <input
+        el-exposer
+        type="text" 
+        
+        [value]="value()|date:'dd-MM-y'" 
+        
+        (element)="dateInputEl($event)"
+        (blur)="dateBlur($any($event.target)); blurE.emit();"
+        (keydown.arrowdown)="downArrowE.emit()"
+        (keydown.escape)="dateEscape($any($event.target))"
+    #el>
+}
+@else {
+    <input
+        el-exposer
+        type="text"
+    
+        [value]="value()|date:'MMM d, y'" 
+
+        (element)="textInputEl($event)"
+        (focus)="textFocus()" 
+    #text>
+}
+<ibutton 
+    tab="-1"
+    icon="calendar" 
+    size="2" 
+    
+    (bdown)="clickDown($event);"
+/>

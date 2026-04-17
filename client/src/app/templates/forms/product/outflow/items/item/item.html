@@ -1,0 +1,9 @@
+<form-input-blackbox [tree]="form" [btn]="false">
+   <ng-container>
+      <productself-dropbox [field]="form.product" (selection)="select($event)"/>
+      <number label="Price" [(value)]="price" [disabled]="true"/>
+      <number label="Quantity" format="1.1-1" [decimal]="false" [formField]="form.quantity" (left)="blur($event)"/>
+      <number label="Total" [disabled]="true" [value]="total()"/>
+      <note label="Notes" [formField]="form.notes"/>
+   </ng-container>
+</form-input-blackbox>

@@ -1,0 +1,21 @@
+<input 
+    #textInput
+    type="text"
+
+    [id]="identity()"
+    [disabled]="disabled()"
+    
+    (blur)="blur($any($event.target))"
+    (focus)="focus()"
+    (keydown.enter)="enter($event)"
+    (keydown.escape)="escape($event)"
+    (keydown.arrowup)="arrowup($event)"
+    (keydown.arrowdown)="arrowdown($event)"
+    (keydown)="keydown($event)"
+    (input)="input($any($event.target))"
+>
+<ibutton 
+    icon="menu" 
+    size="2" tab="-1" 
+    [disabled]="disabled()"
+    (bdown)="btnClick($event)"/>

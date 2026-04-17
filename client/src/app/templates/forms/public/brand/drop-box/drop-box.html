@@ -1,0 +1,5 @@
+<drop-box [label]="label()??'Brand'" [list]="list" [formField]="field_">
+   <ng-template #row let-brand>
+      <td [innerHTML]="brand['marked']"></td>
+   </ng-template>
+</drop-box>

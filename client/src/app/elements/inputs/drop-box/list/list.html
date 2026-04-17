@@ -1,0 +1,12 @@
+<table>
+    <thead>
+        <tr><ng-content/></tr>
+    </thead>
+    <tbody>
+        @for (item of items(); track $index) {
+        <tr #scroll [class.active]="$index===index()" (mousedown)="rowDown($event, item)">
+            <ng-container *ngTemplateOutlet="tempRef(); context:{$implicit:item}"/>
+        </tr>
+        }
+    </tbody>
+</table>

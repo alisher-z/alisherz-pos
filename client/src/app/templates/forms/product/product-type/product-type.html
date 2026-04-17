@@ -1,0 +1,15 @@
+<form-input-blackbox [tree]="form" [btn]="btn()">
+   <ng-container>
+   @if(fresh){
+   <text label="Type name" [formField]="form.name"/>
+   <note label="Notes" [formField]="form.notes"/>
+   <check label="Is Active" [formField]="form.active"/>
+   }
+
+   @else{
+      @if(pkTree_){
+         <productype-dropbox [field]="pkTree_"/>
+      }
+   }
+   </ng-container>   
+</form-input-blackbox>

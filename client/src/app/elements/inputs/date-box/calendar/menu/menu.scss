@@ -1,0 +1,19 @@
+:host {
+   display: flex;
+   justify-content: space-between;
+}
+
+button {
+   border: none;
+   line-height: 1;
+   margin-bottom: 5px;
+   font-size: 1.5rem;
+   color: rgba(blue, .8);
+   cursor: pointer;
+   transition: all .3s;
+
+   &:hover {
+      color: blue;
+      text-decoration: underline;
+   }
+}

@@ -1,0 +1,25 @@
+<table>
+    <thead>
+        <tr>
+            <ng-content select="[header]"/>
+            <th>actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(item of items; track item.pk){
+            <tr>
+                <ng-container *ngTemplateOutlet="row(); context{$implicit:item}"/>
+                <td>
+                    <button type="button" (click)="edit.emit({item, index:$index})">edit</button>
+                    <button type="button" (click)="del.emit({item, index:$index})">delete</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <ng-content select="[footer]"/>
+            <td></td>
+        </tr>
+    </tfoot>
+</table>

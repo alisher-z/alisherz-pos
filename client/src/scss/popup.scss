@@ -1,0 +1,27 @@
+@use '@angular/cdk';
+@import '@angular/cdk/overlay-prebuilt.css';
+
+.popup-style {
+    background: var(--background);
+    border-radius: 3px;
+    box-shadow: 0 2px 3px rgba(black, .33);
+    border-top: 1px solid var(--hover-background);
+
+    transition: all .1s;
+    transition-behavior: allow-discrete;
+}
+
+.hide-popup {
+    opacity: 0;
+    scale: 0;
+}
+
+.show-popup {
+    opacity: 1;
+    scale: 1;
+
+    @starting-style {
+        scale: .3;
+        opacity: .5;
+    }
+}

@@ -1,0 +1,17 @@
+<form-black-box [http]="http" [tree]="productTree" [label]="label()" [(value)]="value">
+   <product-self-form-template [tree]="productTree">
+      <ng-container ptype>
+         <product-type-input label="Product type" [tree]="typeTree" [field]="productTree.type"/>
+      </ng-container>
+
+
+      <ng-container pbrand>
+         <brand-input label="Product brand" [tree]="brandTree" [field]="productTree.brand"/>
+      </ng-container>
+   </product-self-form-template>
+
+
+   <ng-template #tr let-product>
+      <td [innerHTML]="product['marked']"></td>
+   </ng-template>
+</form-black-box>

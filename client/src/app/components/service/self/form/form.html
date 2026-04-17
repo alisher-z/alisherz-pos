@@ -1,0 +1,7 @@
+<base-formz [form]="formz" [http]="http" [(structured)]="structured" (makeit)="makeit()">
+   <ng-container head>Service</ng-container>
+   <ng-container body>
+      <service-self-templatez [tree]="formz"/>
+      <number label="Price" [formField]="formz.history.amount"/>
+   </ng-container>
+</base-formz>

@@ -1,0 +1,17 @@
+<form-input-blackbox [tree]="form.device" [btn]="btn()">
+   <ng-container>
+      @if(fresh){
+      <brand-form-templatez [tree]="form.brand" [pkTree]="form.device.brand" [btn]="true" />
+      <customer-form-templatez [tree]="form.customer" [pkTree]="form.device.customer" [btn]="true" />
+      <text label="Model number" [formField]="form.device.model" />
+      <text label="Serial number" [formField]="form.device.serial" />
+      <note label="Notes" [formField]="form.device.notes" />
+      }
+
+      @else{
+      @if(pkTree_){
+      <device-dropbox [field]="pkTree_" [customer_pk]="customer_pk()" (left)="drop_left.emit($event)" />
+      }
+      }
+   </ng-container>
+</form-input-blackbox>

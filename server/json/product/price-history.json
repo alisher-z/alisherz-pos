@@ -1,0 +1,32 @@
+{
+    "history": {
+        "pk": "019b1470-085a-7dbb-a758-d20db0f2a296",
+        "notes": "b6c39afb77cbe15174ed1b496ee82fc6",
+        "amount": 0.8530909363888299,
+        "product": "019b1470-085a-7dc0-ac24-93c45647228c"
+    },
+    "product": {
+        "type": {
+            "pk": "019b1470-085a-7b0c-a1fc-3a77668b1f47",
+            "name": "12884be014a8976f0c57d4b71d6e85be",
+            "notes": "7e926d29aac932301e30860c1de5db70",
+            "active": true
+        },
+        "brand": {
+            "pk": "019b1470-085a-7d67-ade6-aed7752fa25e",
+            "name": "94cbc54a677f4d6972fe7943303ed03f",
+            "notes": "0696ecb8a84fc78aa8b4c25873b48299",
+            "active": true
+        },
+        "product": {
+            "pk": "019b1470-085a-7d81-b658-d4c480240808",
+            "name": "0e6778ab85d54de01d9655a627742871",
+            "type": "019b1470-085a-7d8d-9909-f9025aa5eeca",
+            "brand": "019b1470-085a-7d91-a8b9-2f3cb15adeec",
+            "model": "0ec3b285fdfa99e98444bb319866423d",
+            "notes": "c568baab049cb9285dc7194732aaaf97",
+            "serial": "430877e69c0ffa17e382e02107b16af6",
+            "barcode": "145b0c799406ff7b7fefcb7f97ffc416"
+        }
+    }
+}

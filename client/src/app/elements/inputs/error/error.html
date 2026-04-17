@@ -1,0 +1,16 @@
+<ibutton tab="-1" icon="error" color="red" size="1.5" (bclick)="show()"/>
+<ng-template
+    cdkConnectedOverlay
+    [cdkConnectedOverlayOrigin]="origin()"
+    [cdkConnectedOverlayOpen]="opened()"
+
+    (overlayOutsideClick)="hide()"
+>
+<ul>
+    @for(e of errors(); track e.kind){
+        <li>
+            <p>{{e.message}}</p>
+        </li>
+    }
+</ul>
+</ng-template>

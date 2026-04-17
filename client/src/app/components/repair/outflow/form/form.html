@@ -1,0 +1,7 @@
+<base-formz [form]="formz" [http]="http" [(structured)]="structured" (makeit)="makeit()">
+   <ng-container head>Outflow</ng-container>
+   <ng-container body>
+      <repair-outflow-form-templatez [tree]="formz"/>
+      <repair-outflow-children-templatez [tree]="formz"/>
+   </ng-container>
+</base-formz>

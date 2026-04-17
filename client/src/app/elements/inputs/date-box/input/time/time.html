@@ -1,0 +1,20 @@
+@if(focused){
+   <input 
+   #text
+   type="text"
+   [value]="value|date:'H:m:s'"
+   (keydown)="keydown($event)"
+   (blur)="blur()"
+   (keydown.escape)="escape()"
+   >
+}
+
+@else {
+   <input
+   #formated
+   type="text"
+   [value]="value|date:'HH:mm:ss'"
+   (focus)="focus()"
+   >
+}
+<ibutton icon="clock" size="2" tab="-1" (bdown)="mousedown($event)"/>

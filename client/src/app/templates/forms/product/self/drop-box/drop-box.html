@@ -1,0 +1,15 @@
+<combo 
+[http]="http" 
+[label]="label()??'Product'" 
+[formField]="field_"
+[isHead]="false"
+[numberOfColumns]="1"
+(live)="selection.emit($event)"
+>
+   <ng-container head>
+      <th>Name</th>
+   </ng-container>
+   <ng-template #row let-product>
+      <td>{{product.name}}</td>
+   </ng-template>
+</combo>

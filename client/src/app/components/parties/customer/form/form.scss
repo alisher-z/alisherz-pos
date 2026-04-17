@@ -1,0 +1,47 @@
+// :host ::ng-deep form main {
+//     display: grid !important;
+//     grid-template-columns: repeat(2, 1fr);
+// }
+
+// :host ::ng-deep form main {
+//     check .input-field {
+//         grid-column: 2;
+//         grid-row: 1;
+//         flex-direction: row;
+//         align-items: end;
+//         justify-content: end;
+//         gap: 3rem;
+
+//         label {
+//             line-height: 1;
+//         }
+//     }
+
+//     email .input-field {
+//         grid-row: 3;
+//         grid-column: 1/-1;
+//     }
+
+//     note .input-field {
+//         grid-column: 1/-1;
+//     }
+// }
+// :host ::ng-deep form main {
+//     display: grid !important;
+//     grid-template-columns: repeat(7, 1fr);
+//     grid-template-rows: repeat(7, min-content);
+
+//     check div {
+//         grid-row: 1;
+//     }
+
+//     text:nth-child(1) section {
+//         grid-row: 2;
+//     }
+
+//     text:nth-child(2) section {
+//         background-color: black;
+//         grid-row: 3;
+//         grid-column: 1/3;
+//     }
+// }

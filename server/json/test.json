@@ -1,0 +1,20 @@
+[
+    {
+        "pk": "019c1a6c-f4a2-7577-8cd4-f3caca9ca1a2",
+        "outflow": "019c1a6c-8643-76cb-aa47-cde749c67108",
+        "product": "price product 1",
+        "price": 55,
+        "quantity": 1,
+        "total": 55,
+        "notes": null
+    },
+    {
+        "pk": "019c1a6c-9e47-75fe-bce5-19fb96ce5af5",
+        "outflow": "019c1a6c-8643-76cb-aa47-cde749c67108",
+        "service": "testing service 2",
+        "price": 23,
+        "duration": "03:00:00",
+        "total": 69,
+        "notes": ""
+    }
+]

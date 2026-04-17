@@ -1,0 +1,29 @@
+@if(label()){
+    <label>{{label()}}</label>
+}
+
+<section>
+    <div class="date">
+        <datebox-date 
+            [(value)]="value"
+    
+            (clickDownE)="dateClickDown()"
+            (focusE)="showCalendar()"
+            (escapeE)="dateEscape()"
+            (blurE)="dateBlur()"
+            (downArrowE)="showCalendar()"
+            (selfDateE)="dateInput = $event;"
+            (selfTextE)="textInput = $event;"
+        />
+        <calendar 
+            [(value)]="value"
+            [visible]="calShown()"
+            (dayClickDownE)="dayClickDown()"
+            (calendarClick)="calClicked.set(true)"
+            (todayDown)="todayDown()"
+        />
+    </div>
+    @if(timeShow()){
+        <datebox-time [(value)]="value"/>
+    }    
+</section>

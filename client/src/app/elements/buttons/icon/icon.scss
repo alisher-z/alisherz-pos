@@ -1,0 +1,10 @@
+:host {
+    display: flex;
+}
+
+svg {
+    height: var(--size);
+    width: var(--size);
+    fill: var(--color);
+    transition: all 1s;
+}

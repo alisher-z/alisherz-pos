@@ -1,0 +1,8 @@
+<form-input-blackbox [tree]="form.outflow" [btn]="false">
+   <ng-container>
+      <text label="ID" [formField]="form.outflow.id"/>
+      <date label="Date" [formField]="form.outflow.date"/>
+      <customer-form-templatez [tree]="form.customer" [pkTree]="form.outflow.customer" [btn]="true"/>
+      <note label="Notes" [formField]="form.outflow.notes"/>
+   </ng-container>
+</form-input-blackbox>

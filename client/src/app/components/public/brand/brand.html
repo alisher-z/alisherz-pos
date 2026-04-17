@@ -1,0 +1,11 @@
+<router-outlet/>
+<a routerLink="form">new</a>
+
+<http-vtable [http]="http" (editClick)="edit($event)">
+    <ng-container head>
+        <th>Name</th>
+    </ng-container>
+    <ng-template #row let-brand>
+        <td>{{brand.name}}</td>
+    </ng-template>
+</http-vtable>

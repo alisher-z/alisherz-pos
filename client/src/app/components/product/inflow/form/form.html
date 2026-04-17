@@ -1,0 +1,7 @@
+<base-formz [form]="formz" [http]="http" [(structured)]="structured" (makeit)="makeit()">
+   <ng-container head>Inflow</ng-container>
+   <ng-container body>
+      <product-inflow-form-templatez [tree]="formz"/>
+      <product-inflow-details-templatez [tree]="formz.inflow"/>
+   </ng-container>
+</base-formz>

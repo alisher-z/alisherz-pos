@@ -1,0 +1,21 @@
+:host {
+   height: 100%;
+}
+
+td {
+   overflow: hidden;
+   white-space: nowrap;
+   text-overflow: ellipsis;
+}
+
+.name {
+   width: 17.5rem;
+}
+
+.phone {
+   width: 17.5rem;
+}
+
+.email {
+   width: 25rem;
+}

@@ -1,0 +1,34 @@
+{
+    "pk": "019c4cc8-d121-733c-b901-ffd4e1062de0",
+    "id": null,
+    "date": "2026-02-11T12:59:15.105Z",
+    "ticket": "019bf668-a029-77c5-89da-cfc6e89dc209",
+    "customer": "019afeb5-c599-79dc-ba5e-943d6bbe33be",
+    "notes": null,
+    "item": {
+        "saves": [
+            {
+                "pk": "019c4cc9-1c1c-7533-a7a9-4910eb2c9c1a",
+                "outflow": "019c4cc8-d121-733c-b901-ffd4e1062de0",
+                "product": "019afe88-3ddc-74a5-a4c0-3ee30d8da684",
+                "price": "019afe88-3ddb-7d4a-8711-a338cb6f1321",
+                "quantity": 1,
+                "notes": null
+            }
+        ],
+        "deletes": []
+    },
+    "service": {
+        "saves": [
+            {
+                "pk": "019c4cc9-086a-7324-937d-f9f873d93c3d",
+                "service": "019bf737-23c3-716f-b9d3-303c2dad0335",
+                "outflow": "019c4cc8-d121-733c-b901-ffd4e1062de0",
+                "price": "019bf760-c36e-7310-bc66-0176c21d010b",
+                "duration": "02:00:00",
+                "notes": null
+            }
+        ],
+        "deletes": []
+    }
+}

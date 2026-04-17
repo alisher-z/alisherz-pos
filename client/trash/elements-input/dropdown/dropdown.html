@@ -1,0 +1,36 @@
+@if(label()){
+    <label [for]="id">
+        {{label()}}
+        @if(required()){
+            <span>*</span>
+        }
+    </label>
+}
+<dropdown-text 
+    cdkOverlayOrigin
+    #text="cdkOverlayOrigin"
+    [disabled]="disabled()"
+    [identity]="id"
+    [(pk)]="value"
+
+    (blurE)="textInputBlur($event)"
+/>
+
+<popup [origin]="text">
+    <dropdown-list 
+    class="popup-style"  
+    animate.enter="show-popup" 
+    animate.leave="hide-popup"
+    [(index)]="utils.index"
+    [items]="utils.filteredList()"
+    >
+        <ng-content/>
+        <ng-template #listItem let-item>
+            <ng-container *ngTemplateOutlet="row(); context{$implicit:item}"/>
+        </ng-template>
+    </dropdown-list>
+</popup>
+
+@if(errors().length>0 && touched()){
+    <input-error [origin]="text" [errors]="errors()"/>
+}

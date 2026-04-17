@@ -1,0 +1,11 @@
+<dropdown display_field="brand.name" [label]="label()??'Device'" [http]="http" [formField]="field_"
+   (left)="left.emit($event)">
+   <ng-container head>
+      <th>Device</th>
+      <th>Customer</th>
+   </ng-container>
+   <ng-template #row let-device>
+      <td>{{device.brand.name}}</td>
+      <td>{{device.customer.name}}</td>
+   </ng-template>
+</dropdown>

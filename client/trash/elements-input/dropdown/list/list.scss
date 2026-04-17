@@ -1,0 +1,82 @@
+:host {
+    max-width: max-content;
+    min-width: var(--parent-width, 0);
+    width: 100%;
+    max-height: 40rem;
+    min-height: 3rem;
+}
+
+:host table ::ng-deep :is(td, th) {
+    padding: 3px 1.3rem;
+}
+
+:host table thead tr ::ng-deep th {
+    text-align: left;
+    border-bottom: 1px solid var(--hover-background);
+}
+
+:host table tbody tr ::ng-deep td mark {
+    text-decoration: underline;
+    background: none;
+}
+
+:host table tbody tr.active ::ng-deep td mark {
+    text-decoration: none;
+    background: none;
+}
+
+table {
+    width: 100%;
+    max-height: 40rem;
+    display: grid;
+    grid-template-columns: repeat(calc(var(--column) - 1), max-content) 1fr;
+    grid-template-rows: min-content 1fr;
+}
+
+thead,
+tbody,
+tr {
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-auto-rows: min-content;
+    grid-column: 1/-1;
+}
+
+tbody {
+    max-height: 100%;
+    width: 100%;
+    overflow: hidden;
+    overflow-y: auto;
+
+    tr {
+        cursor: pointer;
+        transition: all .2s;
+
+        &:hover {
+            background-color: var(--hover-background) !important;
+            color: black;
+        }
+    }
+
+    tr.active {
+        background-color: var(--active-background);
+        color: black;
+    }
+}
+
+
+
+// [popover] {
+//     position: absolute;
+//     border: none;
+//     overflow: hidden;
+//     border-radius: 3px;
+//     box-shadow: 0 2px 3px rgba(black, .33);
+//     border-top: 1px solid var(--hover-background);
+//     inset: unset;
+//     position-try: --popover1, --popover2, --popover3;
+//     transition: opacity 0.4s,
+//         transform 0.4s,
+//         display 0.4s allow-discrete,
+//         overlay 0.4s allow-discrete;
+// }

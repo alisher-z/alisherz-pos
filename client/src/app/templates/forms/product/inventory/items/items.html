@@ -1,0 +1,22 @@
+@let it = items|inventory_items:products;
+
+<gridviewz [list]="it?.items??null" (edit)="edit($event)" (del)="delete($event)">
+   <ng-container header>
+      <th>Product</th>
+      <th>Quantity</th>
+      <th>Cost</th>
+      <th>Total</th>
+   </ng-container>
+   <ng-template #row let-item>
+      <td>{{item.product}}</td>
+      <td>{{item.quantity}}</td>
+      <td>{{item.cost}}</td>
+      <td>{{item.total}}</td>
+   </ng-template>
+   <ng-container footer>
+      <td colspan="3">Total</td>
+      <td>{{it?.total??0}}</td>
+   </ng-container>
+</gridviewz>
+<a routerLink="item">add item</a>
+<router-outlet/>

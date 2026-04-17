@@ -1,0 +1,6 @@
+<form-black-box [http]="http" [tree]="tree()" [label]="label()" [(value)]="value">
+    <product-type-form-template [tree]="tree()"/>
+    <ng-template #tr let-type>
+        <td [innerHTML]="type['marked']"></td>
+    </ng-template>
+</form-black-box>

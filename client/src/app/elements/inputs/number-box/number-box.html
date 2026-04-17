@@ -1,0 +1,29 @@
+<black-box 
+[id]="id" 
+[label]="label()" 
+[required]="required()" 
+[touched]="touched()" 
+[errors]="errors()">
+    @if(focused){
+        <input 
+            type="text" 
+            
+            [value]="value()" 
+            (input)="input()" 
+            (blur)="blur()" 
+            (keydown)="keydown($event)"
+            (keydown.enter)="enter($any($event.target))" 
+            #numberInput>
+    }
+    @else {
+        <input 
+            el-exposer 
+            type="text" 
+            [id]="id"
+            [value]="value()|number:format()" 
+            [disabled]="disabled()" 
+            
+            (focus)="focus()" 
+            (element)="self.emit($event)">
+    }
+</black-box>

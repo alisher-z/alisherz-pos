@@ -1,0 +1,13 @@
+<form cdkTrapFocus [cdkTrapFocusAutoCapture]="true" (submit)="submit($event)">
+   <header>
+      <icon icon="az"/>
+      <label>Item</label>
+      <ilink icon="close" size="1.2" link="../"/>
+   </header>
+   <main>
+      <product-outflow-item-templatez [tree]="formz"/>
+   </main>
+   <footer>
+      <buttonz type="submit" text="Add" [disabled]="formz().invalid()"/>
+   </footer>
+</form>

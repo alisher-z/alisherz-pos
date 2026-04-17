@@ -1,0 +1,12 @@
+<dropdown [label]="label()??'Customer'" [http]="http" [formField]="field_" (left)="left.emit($event)">
+   <ng-container head>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Email</th>
+   </ng-container>
+   <ng-template #row let-customer>
+      <td class="name">{{customer.name}}</td>
+      <td class="phone">{{customer.phone}}</td>
+      <td class="email">{{customer.email}}</td>
+   </ng-template>
+</dropdown>

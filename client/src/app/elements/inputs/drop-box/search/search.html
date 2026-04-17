@@ -1,0 +1,14 @@
+<input 
+#search
+type="text"
+[id]="identity()"
+(focus)="focus()"
+(input)="input($any($event.target))"
+(blur)="blur()"
+(keydown)="keydown($event)"
+(keydown.arrowdown)="down($event)"
+(keydown.arrowup)="up($event)"
+(keydown.enter)="enter($event)"
+(keydown.escape)="escape($event)"
+>
+<ibutton icon="menu" tab="-1" size="2" (bdown)="mouseDown($event)"/>

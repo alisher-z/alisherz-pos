@@ -1,0 +1,23 @@
+<black-box 
+[id]="id" 
+[label]="label()" 
+[required]="required()"
+[touched]="touched()"
+[errors]="errors()"
+>
+    <input 
+    el-exposer
+    type="text"     
+    [id]="id"
+    [value]="value()"
+    [disabled]="disabled()"
+    [readonly]="readonly()"
+    [class.invalid]="invalid()"
+    [class.touched]="touched()"
+    [attr.aria-invalid]="invalid()"
+    [attr.aria-touched]="touched()"
+
+    (element)="self.emit($event)"
+    (input)="input($event.target)"
+    (blur)="blur($event.target)">
+</black-box>

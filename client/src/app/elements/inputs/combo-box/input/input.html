@@ -1,0 +1,22 @@
+<input 
+#searchInput 
+
+type="text" 
+autocomplete="off"
+
+[id]="bridge.inputID" 
+[formField]="searchForm"
+
+(focus)="inputFocus()"
+(blur)="inputBlur()"
+(keydown.enter)="inputEnterKey($event)"
+(keydown.home)="inputHomeKey($event)"
+(keydown.end)="inputEndKey($event)"
+(keydown.pageup)="inputPageUpKey($event)"
+(keydown.pagedown)="inputPageDownKey($event)"
+(keydown.arrowup)="inputArrowUpKey($event)"
+(keydown.arrowdown)="inputArrowDownKey($event)"
+(keydown.escape)="inputEscapeKey($event)"
+(keyup.backspace)="backspaceKey($any($event.target))">
+
+<ibutton icon="menu" tab="-1" size="2" (bdown)="btnClick($event)"/>

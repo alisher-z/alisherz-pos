@@ -1,0 +1,14 @@
+:host {
+   display: flex;
+   max-width: max-content;
+   min-width: var(--parent-width, 0);
+   max-height: 40rem;
+   min-height: 3rem;
+   padding-bottom: 5px;
+}
+
+:host ::ng-deep td {
+   overflow: hidden;
+   white-space: nowrap;
+   text-overflow: ellipsis;
+}

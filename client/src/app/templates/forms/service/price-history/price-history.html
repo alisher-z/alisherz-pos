@@ -1,0 +1,6 @@
+<form-input-blackbox [tree]="form.history" [btn]="false">
+   <ng-container>
+      <service-self-templatez [tree]="form" [pkTree]="form.history.service" [embedded]="true" [btn]="true" />
+      <number label="Amount" [formField]="form.history.amount" />
+   </ng-container>
+</form-input-blackbox>

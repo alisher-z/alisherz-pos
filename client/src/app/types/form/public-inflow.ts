@@ -1,0 +1,96 @@
+import { SavesDeletesType } from "./common";
+import { ProductOutflowTypeExt } from "./product-outflow";
+import { RepairOutflowType } from "./repair-outflow";
+
+const a = {
+   "customer": {
+      "pk": "019be6db-31c9-73ae-9bff-ba4bca1022fe",
+      "id": "customer id 1",
+      "name": "customer 1",
+      "phone": "55",
+      "email": "a2@a.com",
+      "address": "this",
+      "notes": "that",
+      "active": true
+   },
+   "inflow": {
+      "pk": "019be6db-31c9-73ae-9bff-bf053db59abc",
+      "id": "testing id 2",
+      "date": "2026-01-22T17:58:03.465Z",
+      "customer": "019be6db-31c9-73ae-9bff-ba4bca1022fe",
+      "notes": "those",
+      "detail": {
+         "saves": [
+            {
+               "outflow": {
+                  "outflow": {
+                     "pk": "019be6db-31ca-71d0-872b-649c4f650400",
+                     "id": null,
+                     "date": "2026-01-22T17:58:03.466Z",
+                     "customer": "019be6db-31c9-73ae-9bff-ba4bca1022fe",
+                     "notes": null,
+                     "item": {
+                        "saves": [
+                           {
+                              "pk": "019be6dc-0141-7469-b91f-7cea2db1b9fe",
+                              "outflow": "019be6db-31ca-71d0-872b-649c4f650400",
+                              "product": "019afe88-3ddc-74a5-a4c0-3ee30d8da684",
+                              "price": "019afe88-3ddb-7d4a-8711-a338cb6f1321",
+                              "quantity": 1,
+                              "notes": null
+                           },
+                           {
+                              "pk": "019be6dc-0e8a-75ac-937b-9cfcd32dd5ca",
+                              "outflow": "019be6db-31ca-71d0-872b-649c4f650400",
+                              "product": "019b078e-0560-769a-abdd-593e45b06edf",
+                              "price": "019b078e-0560-7304-a038-faebab99cdf0",
+                              "quantity": 2,
+                              "notes": null
+                           }
+                        ],
+                        "deletes": []
+                     }
+                  }
+               },
+               "detail": {
+                  "pk": "019be6db-31ca-71d0-872b-6be41e7fbb59",
+                  "amount": 200,
+                  "discount": 100,
+                  "inflow": "019be6db-31c9-73ae-9bff-bf053db59abc",
+                  "outflow": "019be6db-31ca-71d0-872b-649c4f650400",
+                  "notes": null
+               }
+            }
+         ]
+      }
+   }
+}
+
+export interface PublicInflowType {
+   pk: string;
+   id: string | null;
+   date: Date;
+   customer: string;
+   notes: string | null;
+   stock: SavesDeletesType<ProductInflowDetailType>,
+   repair: SavesDeletesType<RepairInflowDetailType>
+}
+
+export interface InflowDetailType {
+   pk: string;
+   amount: number;
+   discount: number;
+   inflow: string;
+   outflow: string;
+   notes: string | null;
+}
+
+export interface ProductInflowDetailType {
+   detail: InflowDetailType;
+   outflow: ProductOutflowTypeExt;
+}
+
+export interface RepairInflowDetailType {
+   detail: InflowDetailType;
+   outflow: RepairOutflowType;
+}

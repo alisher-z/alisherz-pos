@@ -1,0 +1,22 @@
+<form 
+    cdkTrapFocus 
+    [cdkTrapFocusAutoCapture]="true"
+    (submit)="send($event)"
+>
+    <header>
+        <icon icon="az"/>
+        <label>
+            <ng-content select="[header]"/>
+        </label>
+        <ilink icon="close" size="1.2" [link]="utils.close()"/>
+    </header>
+    <main>
+        <ng-content select="[body]"/>
+    </main>
+    <footer>
+        <buttonz 
+            type="submit" 
+            text="Submit"
+            [disabled]="form()().invalid()"/>
+    </footer>
+</form>

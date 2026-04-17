@@ -1,0 +1,17 @@
+:host {
+   display: flex;
+   align-items: center;
+   background-color: rgb(255, 221, 221);
+   border: 1px solid var(--hover-background);
+   background: var(--background);
+   padding: 3px 7px;
+   padding-right: 3px;
+   border-radius: 3px;
+}
+
+input {
+   width: 100%;
+   background: none;
+   border: none;
+   outline: none;
+}

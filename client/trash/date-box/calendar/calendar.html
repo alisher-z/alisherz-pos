@@ -1,0 +1,13 @@
+<calendar-menu 
+    [(value)]="menu" 
+    (today)="onToday($event)"
+    (todayDown)="todayDown.emit()"
+/>
+
+<calendar-week/>
+
+<calendar-days 
+    [(value)]="days" 
+    [(menu)]="menu" 
+    (clickDownE)="dayClickDownE.emit()"
+/>

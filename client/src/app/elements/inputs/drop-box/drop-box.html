@@ -1,0 +1,24 @@
+@if(list().length>0){
+    @if(label()){
+        <label [for]="elID">
+            {{label()}}
+            @if(required()){
+                <span>*</span>
+            }
+        </label>
+    }
+    <drop-box-search
+    cdkOverlayOrigin
+    #text="cdkOverlayOrigin"
+    [identity]="elID"
+    (left)="blur($event)"
+    />
+    <popup [origin]="text">
+        <drop-box-list class="popup-style" [items]="service.items()">
+            <ng-content/>
+            <ng-template #tempRef let-item>
+                <ng-container *ngTemplateOutlet="row(); context{$implicit:item}"/>
+            </ng-template>
+        </drop-box-list>
+    </popup>
+}

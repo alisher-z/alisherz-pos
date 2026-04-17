@@ -1,0 +1,11 @@
+<button 
+    [type]="type()"
+    [disabled]="disabled()"
+    [tabIndex]="tabindex()"
+
+    (click)="this.bclick.emit($event)"
+    (mousedown)="this.bdown.emit($event)"
+    (mouseup)="this.bup.emit($event)"
+>
+    <icon [icon]="iconName()" [color]="color()" [size]="size()"/>
+</button>

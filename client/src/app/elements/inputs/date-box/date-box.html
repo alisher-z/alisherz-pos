@@ -1,0 +1,21 @@
+<section>
+   @if(label()){
+      <label [for]="elID">
+         {{label()}}
+         @if(required()){
+            <span>*</span>
+         }
+      </label>
+   }
+   <date-day
+   cdkOverlayOrigin
+   #input="cdkOverlayOrigin"
+   [identity]="elID"
+   />
+</section>
+@if(timshow()){
+   <date-time/>
+}
+<popup [origin]="input">
+   <date-calendar class="popup-style"/>
+</popup>

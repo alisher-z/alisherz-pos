@@ -1,0 +1,19 @@
+<form-input-blackbox [tree]="form" [btn]="btn()">
+   <ng-container>
+   @if(fresh){
+      <text label="ID" [formField]="form.id"/>
+      <text label="Name" [formField]="form.name"/>
+      <text label="Phone" [formField]="form.phone"/>
+      <email label="Email" [formField]="form.email"/>
+      <note label="Address" [formField]="form.address"/>
+      <note label="Notes" [formField]="form.notes"/>
+      <check label="Is Active" [formField]="form.active"/>
+   }
+
+   @else{
+      @if(pkTree_){
+         <customer-dropbox [field]="pkTree_"/>
+      }
+   }
+</ng-container>
+</form-input-blackbox>

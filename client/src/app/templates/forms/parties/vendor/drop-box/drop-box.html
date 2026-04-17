@@ -1,0 +1,12 @@
+<combo [label]="label()??'Vendor'" [http]="http" [formField]="field_">
+   <ng-container head>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Email</th>
+   </ng-container>
+   <ng-template #row let-vendor>
+      <td>{{vendor.name}}</td>
+      <td>{{vendor.phone}}</td>
+      <td>{{vendor.email}}</td>
+   </ng-template>
+</combo>

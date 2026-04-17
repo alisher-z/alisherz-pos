@@ -1,0 +1,20 @@
+@if(label()){
+   <label [for]="elID">
+      {{label()}}
+      @if(required()){
+         <span>*</span>
+      }
+   </label>
+}
+<combobox-input #search="cdkOverlayOrigin" cdkOverlayOrigin/>
+
+<popup [origin]="search">
+   <combobox-table class="popup-style">
+      <ng-container head>
+         <ng-content select="[head]"/>
+      </ng-container>
+      <ng-template #row let-item>
+         <ng-container [ngTemplateOutlet]="trContent()" [ngTemplateOutletContext]="{$implicit:item}"/>
+      </ng-template>
+   </combobox-table>
+</popup>

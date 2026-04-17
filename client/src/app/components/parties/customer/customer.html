@@ -1,0 +1,15 @@
+<router-outlet/>
+<a routerLink="form">new</a>
+<http-vtable [http]="http" (editClick)="edit($event)">
+    <ng-container head>
+        <th class="name">Name</th>
+        <th class="phone">Phone</th>
+        <th class="email">Email</th>
+    </ng-container>
+
+    <ng-template #row let-customer>
+        <td class="name" [title]="customer.name">{{customer.name}}</td>
+        <td class="phone" [title]="customer.phone">{{customer.phone}}</td>
+        <td class="email" [title]="customer.email">{{customer.email}}</td>
+    </ng-template>
+</http-vtable>

@@ -1,0 +1,21 @@
+<header>
+    <ibutton icon="chevronLeft" tab="-1" (bclick)="arrowleft()" size="1.3"/>
+    <button
+        tabindex="-1" 
+        (keydown.arrowdown)="arrowdown()"
+        (keydown.arrowup)="arrowup()"
+        (keydown.arrowright)="arrowright()"
+        (keydown.arrowleft)="arrowleft()"
+        (keyup.enter)="enter()"
+        (keydown.tab)="enter()"
+        (keyup.escape)="escape($event)"
+        (click)="click()">
+        {{label}}
+    </button>
+    <ibutton icon="chevronRight" tab="-1" (bclick)="arrowright()" size="1.3"/>
+</header>
+<main tabindex="-1" [class.show]="ddShown">
+    @for(item of items(); track item){
+        <button tabindex="-1" [class.active]="$index===index()" #scroll (click)="itemClick($index)">{{item}}</button>
+    }
+</main>

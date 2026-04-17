@@ -1,0 +1,136 @@
+{
+    "customer": {
+        "pk": "019b2230-a2aa-7414-ab46-7a42949956cc",
+        "id": "c31d69f0ed61f5532f98db937cec0b3b",
+        "name": "78d186fadde651a99f85570cd3b5625c",
+        "email": "e7e16813f371aa85253c6f33ed6b76b3@gmail.com",
+        "notes": "83c5befc68f7238c8b83073fc5eec1e1",
+        "phone": "5c76c49f7a76c71fc3bbc54bab4d3558",
+        "active": true,
+        "address": "33d781739b6833d3d10d6f6b968c3dfb"
+    },
+    "inflow": {
+        "pk": "019b2230-a2ad-7dd8-9ec4-77d27dcbc5f4",
+        "id": "858ade00ccb29acc94821d22a1477f59",
+        "date": "2025-12-15T13:26:11.364851+00:00",
+        "notes": "153ea847f6efdf92f4968cbcd8bf4bf6",
+        "customer": "019b2230-a2aa-7414-ab46-7a42949956cc",
+        "details": [
+            {
+                "detail": {
+                    "pk": "019b2230-a2ad-7e95-b67a-7a4346cfc0ce",
+                    "inflow": "019b2230-a2ad-7dd8-9ec4-77d27dcbc5f4",
+                    "outflow": "019b2230-a2ae-7080-99f5-d1528a0e1c32",
+                    "notes": null,
+                    "amount": 0.5986224361476766,
+                    "discount": 0.09026401396225725
+                },
+                "outflow": {
+                    "ticket": {
+                        "device": {
+                            "brand": {
+                                "pk": "019b2230-a2ad-7edc-b434-cbc1962afdca",
+                                "name": "96b4bcf1eeca960be3a6e92b946afd79",
+                                "notes": "eb317086acb3fa813652432bc435f238",
+                                "active": true
+                            },
+                            "device": {
+                                "pk": "019b2230-a2ad-7efb-bde6-344313fb7a69",
+                                "brand": "019b2230-a2ad-7edc-b434-cbc1962afdca",
+                                "model": "243fc98ef17682fa7c241f091dba6af5",
+                                "notes": "548b645c0f358c13f2986dd7c3d73bde",
+                                "serial": "975932869098ce33018ed67696bee8ec",
+                                "customer": "019b2230-a2aa-7414-ab46-7a42949956cc"
+                            }
+                        },
+                        "ticket": {
+                            "pk": "019b2230-a2ad-7f4c-861c-d956201a595c",
+                            "id": "be4d4864dd1b9429a7810b02b6188e75",
+                            "date": "2025-12-15T13:26:11.364851+00:00",
+                            "device": "019b2230-a2ad-7efb-bde6-344313fb7a69",
+                            "problem": "ab02b55a486d1a5f3ad76734aef3b2d7",
+                            "estimated": 25
+                        }
+                    },
+                    "outflow": {
+                        "pk": "019b2230-a2ae-7080-99f5-d1528a0e1c32",
+                        "id": "0dac4ad9597e70edb2a04a9912dcfd5d",
+                        "date": "2025-12-15T13:26:11.364851+00:00",
+                        "notes": "128321a9ac9d0f80a363c64eaf797683",
+                        "ticket": "019b2230-a2ad-7f4c-861c-d956201a595c",
+                        "customer": "019b2230-a2aa-7414-ab46-7a42949956cc",
+                        "items": [
+                            {
+                                "item": {
+                                    "pk": "019b2230-a2ae-70b4-b5e5-b32d83f2cc97",
+                                    "notes": "23f5bd9aa86c38321c446abda825d9b8",
+                                    "price": "019b2230-a2ae-7279-a9d8-304e2303cea2",
+                                    "outflow": "019b2230-a2ae-7080-99f5-d1528a0e1c32",
+                                    "product": "019b2230-a2ae-721f-ae87-39ce8252a7a6",
+                                    "quantity": 2
+                                },
+                                "history": {
+                                    "history": {
+                                        "pk": "019b2230-a2ae-7279-a9d8-304e2303cea2",
+                                        "notes": "45f95c7345b895b6107b5453159c6c9b",
+                                        "amount": 0.6385171910321992,
+                                        "product": "019b2230-a2ae-721f-ae87-39ce8252a7a6"
+                                    }
+                                },
+                                "product": {
+                                    "type": {
+                                        "pk": "019b2230-a2ae-71b1-9ae0-3b95b83aa05a",
+                                        "name": "baacc1b85582500ae9725be49b6afb3a",
+                                        "notes": "8046747aad09f50a591d03a0778dd6da",
+                                        "active": true
+                                    },
+                                    "brand": {
+                                        "pk": "019b2230-a2ae-71df-b9c8-e532a19dcb78",
+                                        "name": "5231251392f123ea3a9dedec57c38a6d",
+                                        "notes": "45ad0b44af7617c3ac6445926b4a0ea6",
+                                        "active": true
+                                    },
+                                    "product": {
+                                        "pk": "019b2230-a2ae-721f-ae87-39ce8252a7a6",
+                                        "name": "9bd6830592a4cd11970c234c2559d3ba",
+                                        "type": "019b2230-a2ae-71b1-9ae0-3b95b83aa05a",
+                                        "brand": "019b2230-a2ae-71df-b9c8-e532a19dcb78",
+                                        "model": "61dc0350c715e9844e514871caaea4e5",
+                                        "notes": "476675fa8b04f442077c1151cc32e961",
+                                        "serial": "4f15728c0140affbcc27258049741b6a",
+                                        "barcode": "327537ff78118f4896d1b85843e10d35"
+                                    }
+                                }
+                            }
+                        ],
+                        "services": [
+                            {
+                                "history": {
+                                    "history": {
+                                        "pk": "019b2230-a2ae-7348-a7ce-642a49e81d66",
+                                        "amount": 0.15896316306685332,
+                                        "service": "019b2230-a2ae-7326-af63-6fa291d94321"
+                                    }
+                                },
+                                "service": {
+                                    "pk": "019b2230-a2ae-7326-af63-6fa291d94321",
+                                    "id": "deeb5f849d9576d1fe8e600c6935a872",
+                                    "name": "35a0690aa980db6909b5f8bf9f1a2377",
+                                    "notes": "a0c22a584b3ca17592eb0bf92a8aeade"
+                                },
+                                "rservice": {
+                                    "pk": "019b2230-a2ae-736b-a05c-9b72e626a827",
+                                    "notes": "9a47d34569e277361236102b02750c07",
+                                    "price": "019b2230-a2ae-7348-a7ce-642a49e81d66",
+                                    "outflow": "019b2230-a2ae-7080-99f5-d1528a0e1c32",
+                                    "service": "019b2230-a2ae-7326-af63-6fa291d94321",
+                                    "duration": "2 hours"
+                                }
+                            }
+                        ]
+                    }
+                }
+            }
+        ]
+    }
+}

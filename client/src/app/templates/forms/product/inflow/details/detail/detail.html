@@ -1,0 +1,11 @@
+<form-input-blackbox [tree]="form.detail" [btn]="false">
+   <ng-container>
+      <number label="Received Amount" [formField]="form.detail.amount"/>
+      <number label="Due Amount" [disabled]="true" [(value)]="dueAmount"/>
+      <number label="Discount" [formField]="form.detail.discount"/>
+      <product-outflow-items-template 
+      [form]="form.outflow" 
+      (total)="totalItemsPrice($event)"
+      />
+   </ng-container>
+</form-input-blackbox>

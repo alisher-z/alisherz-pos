@@ -1,0 +1,15 @@
+<form-input-blackbox [tree]="form.service" [btn]="btn()">
+   <ng-container>
+      @if(fresh){
+      <text label="ID" [formField]="form.service.id" />
+      <text label="Name" [formField]="form.service.name" />
+      <note label="Notes" [formField]="form.service.notes" />
+      }
+
+      @else{
+      @if(pkTree_){
+      <service-self-dropbox [field]="pkTree_" />
+      }
+      }
+   </ng-container>
+</form-input-blackbox>

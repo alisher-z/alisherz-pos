@@ -1,0 +1,28 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    width: min-content;
+
+    padding: 5px;
+    border-radius: 3px;
+    background: var(--background);
+    border-top: 1px solid rgba(black, .07);
+    box-shadow: 0 2px 3px rgba(black, .33);
+
+    position: absolute;
+    top: calc(100% + 3px);
+    right: 0;
+    z-index: 1;
+
+    visibility: hidden;
+    opacity: 0;
+    scale: .1;
+    transform-origin: right top;
+    transition: .3s;
+
+    &.visible {
+        visibility: visible;
+        opacity: 1;
+        scale: 1;
+    }
+}

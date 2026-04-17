@@ -1,0 +1,57 @@
+{
+    "vendor": {
+        "pk": "019befd6-909d-72fa-86e5-fe49d0851b3f",
+        "id": null,
+        "name": "inventory vendor name",
+        "phone": "",
+        "email": null,
+        "address": null,
+        "notes": null,
+        "active": true
+    },
+    "inventory": {
+        "pk": "019befd6-909d-72fa-86e6-00c51c1ae161",
+        "id": null,
+        "date": "2026-01-24T11:49:35.005Z",
+        "vendor": "019befd6-909d-72fa-86e5-fe49d0851b3f",
+        "notes": null,
+        "item": {
+            "saves": [
+                {
+                    "product": {
+                        "type": {
+                            "pk": "019befd8-475d-76be-991d-3fd547bd323f",
+                            "name": "inventory type 2",
+                            "active": true,
+                            "notes": null
+                        },
+                        "brand": {
+                            "pk": "019befd8-475d-76be-991d-425c914624b7",
+                            "name": "inventory brand 1",
+                            "active": true,
+                            "notes": null
+                        },
+                        "product": {
+                            "pk": "019befd8-475d-76be-991d-481accceb6c4",
+                            "barcode": "inventory barcode 3",
+                            "name": "inventory product 3",
+                            "type": "019befd8-475d-76be-991d-3fd547bd323f",
+                            "brand": "019befd8-475d-76be-991d-425c914624b7",
+                            "serial": null,
+                            "model": null,
+                            "notes": null
+                        }
+                    },
+                    "item": {
+                        "pk": "019befd8-475d-76be-991d-4d584e936afb",
+                        "quantity": 1,
+                        "cost": 6,
+                        "product": "019befd8-475d-76be-991d-481accceb6c4",
+                        "inventory": "019befd6-909d-72fa-86e6-00c51c1ae161",
+                        "notes": ""
+                    }
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,3 @@
+<calendar-select [items]="years" [(value)]="year"/>
+<button tabindex="-1" (mousedown)="todayDown.emit()" (click)="onToday()">today</button>
+<calendar-select [items]="months" [(value)]="month"/>

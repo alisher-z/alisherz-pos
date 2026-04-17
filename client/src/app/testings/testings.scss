@@ -1,0 +1,11 @@
+:host(:not([class])) {
+    h1 {
+        background-color: green;
+    }
+}
+
+:host(.test) {
+    h1 {
+        font-size: 100px;
+    }
+}

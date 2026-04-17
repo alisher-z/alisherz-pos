@@ -1,0 +1,20 @@
+<table>
+    <thead>
+        <tr>
+            <ng-content/>
+        </tr>
+    </thead>
+    <tbody>
+        @for(item of list; track item.pk){
+        <tr 
+            [id]="item.pk" 
+            [class.active]="$index === index()"
+            (mousedown)="rowClick($event,item)" 
+            #scroll
+        >
+            <ng-container 
+                *ngTemplateOutlet="listItem(); context:{$implicit:item}"/>
+        </tr>
+        }
+    </tbody>
+</table>

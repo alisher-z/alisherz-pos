@@ -1,0 +1,8 @@
+<form-input-blackbox [tree]="form.inventory" [btn]="false">
+   <ng-container>
+      <text label="ID" [formField]="form.inventory.id"/>
+      <date label="Date" [formField]="form.inventory.date"/>
+      <vendor-form-templatez [tree]="form.vendor" [pkTree]="form.inventory.vendor" [btn]="true"/>
+      <note label="Notes" [formField]="form.inventory.notes"/>
+   </ng-container>
+</form-input-blackbox>

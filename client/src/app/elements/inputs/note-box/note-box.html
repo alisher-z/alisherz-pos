@@ -1,0 +1,24 @@
+<black-box 
+[id]="id" 
+[label]="label()" 
+[required]="required()" 
+[touched]="touched()" 
+[errors]="errors()">
+    <textarea
+        el-exposer
+        cdkTextareaAutosize
+        cdkAutosizeMinRows="3"
+        cdkAutosizeMaxRows="7"
+        #autosize="cdkTextareaAutosize"
+        [id]="id"
+        [value]="value()"
+        [disabled]="disabled()"
+        [readonly]="readonly()"
+        [class.invalid]="invalid()"
+        [attr.aria-invalid]="invalid()"
+    
+        (element)="self.emit($event)"
+        (input)="input($any($event.target))"
+        (blur)="blur($any($event.target))">
+    </textarea>
+</black-box>

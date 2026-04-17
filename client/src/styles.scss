@@ -1,0 +1,48 @@
+@use 'scss/popup';
+@use 'scss/scroll';
+
+:root {
+    --font-color: #333;
+    --background: #f1eded;
+    --hover-background: rgba(51, 51, 51, 0.25);
+    --svg-hover: rgba(255, 0, 0, .7);
+    --active-background: #A7AAE1;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: inherit;
+    color: inherit;
+    font-size: inherit;
+    outline: none;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--font-color);
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--background);
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+*:focus-visible {
+    outline: 1px solid var(--hover-background) !important;
+}

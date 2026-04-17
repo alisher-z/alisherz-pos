@@ -1,0 +1,22 @@
+<table>
+   @if(headRow()){
+   <thead>
+      <tr>
+         <ng-container *ngTemplateOutlet="headRow()" />
+         <th>Actions</th>
+      </tr>
+   </thead>
+   }
+   <tbody>
+      <ng-container #tbody />
+   </tbody>
+</table>
+
+<ng-template #bodytemplate let-$implicit let-index="index" let-cells="cells">
+   <tr>
+      <ng-container *ngTemplateOutlet="cells; context:{$implicit, index}" />
+      <td>
+         <button>edit</button>
+      </td>
+   </tr>
+</ng-template>

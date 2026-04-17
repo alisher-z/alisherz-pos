@@ -1,0 +1,11 @@
+@if(isNew){
+   <ng-content/>
+}
+@else{
+   <drop-box [label]="label()" [list]="items" [(value)]="ddvalue">
+      <ng-template #row let-item>
+         <ng-container *ngTemplateOutlet="tr(); context{$implicit:item}"/>
+      </ng-template>
+   </drop-box>
+}
+<check-button tab="-1" [captions]="['new', 'existing']" [field]="tree_.isNew"/>

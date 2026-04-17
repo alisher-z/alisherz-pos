@@ -1,0 +1,17 @@
+<form-input-blackbox [tree]="form.product" [btn]="btn()">
+   <ng-container>
+      @if(fresh){
+      <text label="Barcode" [formField]="form.product.barcode" />
+      <text label="Product name" [formField]="form.product.name" />
+      <productype-form-templatez [tree]="form.type" [pkTree]="form.product.type" [btn]="true" />
+      <brand-form-templatez [tree]="form.brand" [pkTree]="form.product.brand" [btn]="true" />
+      <text label="Serial number" [formField]="form.product.serial" />
+      <text label="Model number" [formField]="form.product.model" />
+      <note label="Notes" [formField]="form.product.notes" />
+      }@else{
+      @if(pkTree_){
+      <productself-dropbox [field]="pkTree_" />
+      }
+      }
+   </ng-container>
+</form-input-blackbox>

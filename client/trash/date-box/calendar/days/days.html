@@ -1,0 +1,17 @@
+@for(date of dates; track date.date.toLocaleString()){
+    <button
+        tabindex="-1" 
+        [class]="date.label"
+        [class.today]="isToday(date.date)"
+        [class.date]="isCurrent(date.date)"
+        [disabled]="date.label !== 'current'"
+
+        (mousedown)="clickDown($event, date.date)"
+    >
+        @if(date.label==='current'){
+            {{date.date|date:'d'}}
+        }@else {
+            &nbsp;
+        }
+    </button>
+}

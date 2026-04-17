@@ -1,0 +1,16 @@
+<form cdkTrapFocus [cdkTrapFocusAutoCapture]="true" (submit)="submit($event)">
+   <header>
+      <icon icon="az" />
+      @if(titlez()){
+      <label>{{titlez()}}</label>
+      }
+      <ilink icon="close" size="1.2" link="../" />
+   </header>
+   <main>
+      <ng-content select="[body]" />
+   </main>
+   <footer>
+      <buttonz type="button" text="reset" (bclick)="resetz.emit()"/>
+      <buttonz type="submit" [text]="btnText()" [disabled]="form().invalid()" />
+   </footer>
+</form>

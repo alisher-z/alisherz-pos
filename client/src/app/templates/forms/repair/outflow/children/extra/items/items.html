@@ -1,0 +1,23 @@
+<vtable (edit)="edit.emit($event)" (del)="del($event)">
+   <ng-container [vlist]="transformer.items"/>
+   <ng-container [vlist]="transformer.repairs"/>
+
+   <ng-container head>
+      <th>Product/Service</th>
+      <th>Price</th>
+      <th>Quantity/Duration</th>
+      <th>Total</th>
+   </ng-container>
+
+   <ng-template #row let-item>
+      <td>{{item.product ?? item.service}}</td>
+      <td>{{item.price}}</td>
+      <td>{{item.quantity ?? item.duration}}</td>
+      <td>{{item.total}}</td>
+   </ng-template>
+
+   <ng-container foot>
+      <td colspan="3">Total</td>
+      <td>{{transformer.grandTotal}}</td>
+   </ng-container>
+</vtable>

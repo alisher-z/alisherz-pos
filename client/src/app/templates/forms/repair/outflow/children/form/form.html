@@ -1,0 +1,28 @@
+<local-formz 
+titlez="Repair Service" 
+btn-text="Add" 
+[tree]="option()==='service'?serviceForm:itemForm"
+(submitz)="submit()"
+(resetz)="reset()"
+>
+   <ng-container body>
+      <div class="options">
+         <label>
+            <span>Service</span>
+            <input type="radio" name="which" value="service" [(ngModel)]="option">
+         </label>
+         <label>
+            <span>Item</span>
+            <input type="radio" name="which" value="item" [(ngModel)]="option">
+         </label>
+      </div>
+      @if(option()==='service'){
+      <repair-outflow-service-templatez [tree]="serviceForm" />
+      }
+
+      @else{
+      <product-outflow-item-templatez [tree]="itemForm" />
+      }
+      <repair-outflow-items (edit)="edit($event)"/>
+   </ng-container>
+</local-formz>

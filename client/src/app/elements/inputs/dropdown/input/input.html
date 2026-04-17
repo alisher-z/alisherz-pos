@@ -1,0 +1,18 @@
+<input type="text" #textbox
+[id]="bridge.ID"
+[disabled]="bridge.disabled()"
+[(ngModel)]="action.bridge.searchText"
+(focus)="focus($event.target)"
+(input)="input($event)"
+(blur)="blur($event)"
+(keydown.enter)="enter($event)"
+(keydown.escape)="escape($event)"
+(keyup.backspace)="backspace($event.target)"
+(keydown.arrowdown)="arrowdow($event)"
+(keydown.arrowup)="arrowup($event)"
+(keydown.pagedown)="pagedown($event)"
+(keydown.pageup)="pageUp($event)"
+(keydown.home)="home($event)"
+(keydown.end)="end($event)"
+>
+<ibutton icon="menu" tab="-1" size="2" [disabled]="bridge.disabled()" (bdown)="click($event, textbox)"/>

@@ -1,0 +1,35 @@
+{
+    "customer": {
+        "pk": "019bcce2-2290-70ba-9794-d0c7c91ad647",
+        "id": null,
+        "name": "ahmad",
+        "phone": null,
+        "email": null,
+        "address": null,
+        "notes": null,
+        "active": true
+    },
+    "outflow": {
+        "pk": "019bcce2-229b-75fa-ba45-82c8f763a77d",
+        "id": null,
+        "date": "2026-01-17T16:55:30.715Z",
+        "customer": "019bcce2-2290-70ba-9794-d0c7c91ad647",
+        "notes": null,
+        "item": {
+            "saves": [
+                {
+                    "pk": "019bccfa-d44f-753e-a3d5-8fbeb24ea172",
+                    "outflow": "019bcce2-229b-75fa-ba45-82c8f763a77d",
+                    "product": "019b078e-0560-769a-abdd-593e45b06edf",
+                    "price": "019b078e-0560-7304-a038-faebab99cdf0",
+                    "quantity": 1,
+                    "notes": null
+                }
+            ],
+            "deletes": [
+                "019bccfa-d44f-753e-a3d5-8fbeb24ea172",
+                "019bccfa-d44f-753e-a3d5-8fbeb24ea172"
+            ]
+        }
+    }
+}

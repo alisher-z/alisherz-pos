@@ -1,0 +1,17 @@
+@for (date of dates(); track date.date.toLocaleString()) {
+   @let _date = date.date;
+   @let _label = date.label;
+
+   <button 
+   tabindex="-1"
+   [class]="_label"
+   [disabled]="_label!=='current'"
+   [class.today]="isToday(_date)"
+   [class.date]="isCurrent(_date)"
+   (mousedown)="mousedown($event,_date)"
+   >
+      @if(_label==='current'){
+         {{_date|date:'d'}}
+      }@else{ &nbsp; }
+   </button>
+}

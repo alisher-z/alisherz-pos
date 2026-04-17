@@ -1,0 +1,21 @@
+@if(focused){
+   <input 
+   #dateInput
+   type="text"
+   [value]="value|date:'dd-MM-y'"
+   (blur)="blur($any($event.target))"
+   (keydown)="keydown($event)"
+   (keydown.escape)="escape($event)"
+   >
+}
+
+@else{
+   <input
+   #textInput
+   type="text"
+   [id]="identity()"
+   [value]="value|date:'MMM d, y'"
+   (focus)="focus()"
+   >
+}
+<ibutton tab="-1" icon="calendar" size="2" (bdown)="mousedown($event)"/>

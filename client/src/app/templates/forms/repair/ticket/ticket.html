@@ -1,0 +1,21 @@
+<form-input-blackbox [tree]="form.ticket" [btn]="btn()">
+   <ng-container>
+      @if(fresh){
+      <text label="ID" [formField]="form.ticket.id" />
+      <date label="Date" [formField]="form.ticket.date" />
+      @if(!form.device.device.fresh().value()){
+      <customer-dropbox [field]="form.ticket.customer" (left)="leftCustomer($event)" />
+      }
+      <device-form-templatez [tree]="form.device" [pkTree]="form.ticket.device"
+         [customer_pk]="form.ticket.customer().value()" [btn]="true" (drop_left)="leftDevice($event)" />
+      <number label="Estimated" [formField]="form.ticket.estimated" />
+      <note label="Problem" [formField]="form.ticket.problem" />
+      }
+
+      @else{
+      @if(pkTree_){
+      <ticket-dropbox [field]="pkTree_" />
+      }
+      }
+   </ng-container>
+</form-input-blackbox>

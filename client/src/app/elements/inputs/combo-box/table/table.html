@@ -1,0 +1,17 @@
+<vtable 
+[list]="bridge.http().chunks()"
+[isActionBtns]="false"
+[isFoot]="false"
+[activePK]="bridge.pk()"
+[isHead]="bridge.isHead()"
+[isFoot]="bridge.isFoot()"
+[numberOfColumns]="bridge.numberOfColumns()"
+(rowDownClick)="rowClick($event)"
+>
+   <ng-container head>
+      <ng-content select="[head]"/>
+   </ng-container>
+   <ng-template #row let-item>
+      <ng-container [ngTemplateOutlet]="trContent()" [ngTemplateOutletContext]="{$implicit:item}"/>
+   </ng-template>
+</vtable>

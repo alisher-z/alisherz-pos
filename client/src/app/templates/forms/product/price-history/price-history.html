@@ -1,0 +1,11 @@
+<form-input-blackbox [tree]="form.history" [btn]="false">
+   <ng-container>
+      <productself-form-templatez 
+         [tree]="form.product" 
+         [pkTree]="form.history.product" 
+         [btn]="true"
+      />
+      <number label="Amount" [formField]="form.history.amount"/>
+      <note label="Notes" [formField]="form.history.notes"/>
+   </ng-container>
+</form-input-blackbox>

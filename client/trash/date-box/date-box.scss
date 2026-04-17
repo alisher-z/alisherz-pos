@@ -1,0 +1,10 @@
+section {
+    width: min-content;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.date {
+    position: relative;
+}

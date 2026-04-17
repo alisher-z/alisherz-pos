@@ -1,0 +1,8 @@
+<form-input-blackbox [tree]="form" [btn]="false">
+   <ng-container>
+      <productself-form-templatez [tree]="form.product" [pkTree]="form.item.product" [btn]="true"/>
+      <number label="Quantity" [formField]="form.item.quantity"/>
+      <number label="Cost" [formField]="form.item.cost"/>
+      <note label="Notes" [formField]="form.item.notes"/>
+   </ng-container>
+</form-input-blackbox>

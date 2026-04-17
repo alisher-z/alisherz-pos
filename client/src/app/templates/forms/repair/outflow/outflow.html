@@ -1,0 +1,9 @@
+<form-input-blackbox [tree]="form" [btn]="false">
+   <ng-container>
+      <text label="ID" [formField]="form.id" />
+      <date label="Date" [time]="true" [formField]="form.date" />
+      <customer-dropbox [field]="form.customer" />
+      <ticket-dropbox [field]="form.ticket" />
+      <note label="Notes" [formField]="form.notes" />
+   </ng-container>
+</form-input-blackbox>
