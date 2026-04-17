@@ -1,7 +1,7 @@
 import { required, schema } from "@angular/forms/signals";
-import { CustomerType } from "../app/types/form/party-customer";
-import { email } from "../app/utils/custome-validations/email";
-import { maxLength } from "../app/utils/custome-validations/max.length";
+import { CustomerType } from "../types/form/party-customer";
+import { email } from "../utils/custome-validations/email";
+import { maxLength } from "../utils/custome-validations/max.length";
 
 export const CUSTOMER_SCHEMA = schema<CustomerType>(p => {
    required(p.pk, { message: 'customer primary key' });

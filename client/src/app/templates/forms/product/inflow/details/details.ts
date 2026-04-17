@@ -1,7 +1,7 @@
 import { Component, effect, input, signal } from '@angular/core';
 import { FieldTree, form } from '@angular/forms/signals';
-import { PRODUCT_INFLOW_DETAIL_SCHEMA_EXT } from '../../../../../../schemas/product-inflow-detail';
 import { getProductInflowDetailInitData, getProductInflowDetailValues } from '../../../../../data/product-inflow-detail';
+import { PRODUCT_INFLOW_DETAIL_SCHEMA_EXT } from '../../../../../schemas/product-inflow-detail';
 import { ProductInflowType } from '../../../../../types/form/product-inflow';
 import { ProductInflowDetailTypeExt } from '../../../../../types/form/product-inflow-details';
 import { ProductInflowDetailTemplate } from './detail/detail';

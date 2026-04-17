@@ -1,7 +1,7 @@
 import { Component, effect, inject, signal } from '@angular/core';
 import { form } from '@angular/forms/signals';
-import { DEVICE_SCHEMA_EXT } from '../../../../../schemas/repair-device';
 import { getDeviceInitData, getDeviceValues } from '../../../../data/repair-device';
+import { DEVICE_SCHEMA_EXT } from '../../../../schemas/repair-device';
 import { BaseFormz } from "../../../../templates/forms/form/form";
 import { DeviceFormTemplate } from "../../../../templates/forms/repair/device/device";
 import { DeviceTypeExt } from '../../../../types/form/repair-device';

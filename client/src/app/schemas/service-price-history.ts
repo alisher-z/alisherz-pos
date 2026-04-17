@@ -1,5 +1,5 @@
 import { apply, hidden, required, schema } from "@angular/forms/signals";
-import { ServicePriceHistoryType, ServicePriceHistoryTypeExt } from "../app/types/form/service-price-history";
+import { ServicePriceHistoryType, ServicePriceHistoryTypeExt } from "../types/form/service-price-history";
 import { SERVICE_SELF_SCHEMA } from "./service-self";
 
 export const SERVICE_PRICE_HISTORY_SCHEMA = schema<ServicePriceHistoryType>(p => {

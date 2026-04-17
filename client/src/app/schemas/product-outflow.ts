@@ -1,6 +1,6 @@
 import { apply, hidden, required, schema, validate } from "@angular/forms/signals";
-import { ProductOutflowType, ProductOutflowTypeExt } from "../app/types/form/product-outflow";
-import { maxLength } from "../app/utils/custome-validations/max.length";
+import { ProductOutflowType, ProductOutflowTypeExt } from "../types/form/product-outflow";
+import { maxLength } from "../utils/custome-validations/max.length";
 import { CUSTOMER_SCHEMA } from "./party-customer";
 
 export const PRODUCT_OUTFLOW_SCHEMA = schema<ProductOutflowType>(p => {

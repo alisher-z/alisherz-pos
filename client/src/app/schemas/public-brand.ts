@@ -1,6 +1,6 @@
 import { required, schema } from "@angular/forms/signals";
-import { BrandType } from "../app/types/form/public-brand";
-import { maxLength } from "../app/utils/custome-validations/max.length";
+import { BrandType } from "../types/form/public-brand";
+import { maxLength } from "../utils/custome-validations/max.length";
 
 export const BRAND_SCHEMA = schema<BrandType>(p => {
    required(p.pk, { message: 'brand primary key' });

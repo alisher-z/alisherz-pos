@@ -1,6 +1,6 @@
 import { apply, disabled, hidden, required, schema } from "@angular/forms/signals";
-import { TicketType, TicketTypeExt } from "../app/types/form/repair-ticket";
-import { maxLength } from "../app/utils/custome-validations/max.length";
+import { TicketType, TicketTypeExt } from "../types/form/repair-ticket";
+import { maxLength } from "../utils/custome-validations/max.length";
 import { DEVICE_SCHEMA_EXT } from "./repair-device";
 
 export const TICKET_SCHEMA = schema<TicketType>(p => {

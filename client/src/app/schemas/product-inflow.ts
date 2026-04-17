@@ -1,6 +1,6 @@
 import { apply, applyEach, hidden, required, schema, validate } from "@angular/forms/signals";
-import { ProductInflowType, ProductInflowTypeExt } from "../app/types/form/product-inflow";
-import { maxLength } from "../app/utils/custome-validations/max.length";
+import { ProductInflowType, ProductInflowTypeExt } from "../types/form/product-inflow";
+import { maxLength } from "../utils/custome-validations/max.length";
 import { CUSTOMER_SCHEMA } from "./party-customer";
 import { PRODUCT_INFLOW_DETAIL_SCHEMA_EXT } from "./product-inflow-detail";
 

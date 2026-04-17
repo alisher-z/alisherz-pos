@@ -1,6 +1,6 @@
 import { apply, hidden, required, schema } from "@angular/forms/signals";
-import { ProductPriceHistoryType, ProductPriceHistoryTypeExt } from "../app/types/form/product-price-history";
-import { maxLength } from "../app/utils/custome-validations/max.length";
+import { ProductPriceHistoryType, ProductPriceHistoryTypeExt } from "../types/form/product-price-history";
+import { maxLength } from "../utils/custome-validations/max.length";
 import { PRODUCT_SELF_SCHEMA_EXT } from "./product-self";
 
 export const PRODUCT_PRICE_HISTORY_SCHEMA = schema<ProductPriceHistoryType>(p => {

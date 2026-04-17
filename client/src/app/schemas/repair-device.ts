@@ -1,6 +1,6 @@
 import { apply, hidden, required, schema } from "@angular/forms/signals";
-import { DeviceType, DeviceTypeExt } from "../app/types/form/repair-device";
-import { maxLength } from "../app/utils/custome-validations/max.length";
+import { DeviceType, DeviceTypeExt } from "../types/form/repair-device";
+import { maxLength } from "../utils/custome-validations/max.length";
 import { CUSTOMER_SCHEMA } from "./party-customer";
 import { BRAND_SCHEMA } from "./public-brand";
 

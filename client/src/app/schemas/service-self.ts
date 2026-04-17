@@ -1,6 +1,6 @@
 import { apply, required, schema } from "@angular/forms/signals";
-import { ServiceSelfType, ServiceSelfTypeExt } from "../app/types/form/service-self";
-import { maxLength } from "../app/utils/custome-validations/max.length";
+import { ServiceSelfType, ServiceSelfTypeExt } from "../types/form/service-self";
+import { maxLength } from "../utils/custome-validations/max.length";
 import { SERVICE_PRICE_HISTORY_SCHEMA } from "./service-price-history";
 
 export const SERVICE_SELF_SCHEMA = schema<ServiceSelfType>(p => {

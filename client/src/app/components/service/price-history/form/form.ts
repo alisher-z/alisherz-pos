@@ -1,7 +1,7 @@
 import { Component, effect, inject, signal } from '@angular/core';
 import { form } from '@angular/forms/signals';
-import { SERVICE_PRICE_HISTORY_SCHEMA_EXT } from '../../../../../schemas/service-price-history';
 import { getServicePriceHistoryInitData, getServicePriceHistoryValues } from '../../../../data/service-price-history';
+import { SERVICE_PRICE_HISTORY_SCHEMA_EXT } from '../../../../schemas/service-price-history';
 import { BaseFormz } from "../../../../templates/forms/form/form";
 import { ServicePriceHistoryFormTemplate } from "../../../../templates/forms/service/price-history/price-history";
 import { ServicePriceHistoryTypeExt } from '../../../../types/form/service-price-history';

@@ -1,7 +1,7 @@
 import { Component, effect, inject, signal } from '@angular/core';
 import { form } from '@angular/forms/signals';
-import { PRODUCT_INVENTORY_SCHEMA_EXT } from '../../../../../schemas/product-inventory';
 import { getProductInventoryInitData, getProductInventoryValues } from '../../../../data/product-inventory';
+import { PRODUCT_INVENTORY_SCHEMA_EXT } from '../../../../schemas/product-inventory';
 import { BaseFormz } from "../../../../templates/forms/form/form";
 import { ProductInventoryFormTemplate } from "../../../../templates/forms/product/inventory/inventory";
 import { ProductInventoryItemsTemplate } from "../../../../templates/forms/product/inventory/items/items";

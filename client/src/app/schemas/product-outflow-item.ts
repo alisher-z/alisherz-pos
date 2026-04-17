@@ -1,6 +1,6 @@
 import { min, required, schema } from "@angular/forms/signals";
-import { ProductOutflowItemType } from "../app/types/form/product-outflow-item";
-import { maxLength } from "../app/utils/custome-validations/max.length";
+import { ProductOutflowItemType } from "../types/form/product-outflow-item";
+import { maxLength } from "../utils/custome-validations/max.length";
 
 export const PRODUCT_OUTFLOW_ITEM_SCHEMA = schema<ProductOutflowItemType>(p => {
    required(p.pk, { message: 'product outflow item primary key' });

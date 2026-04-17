@@ -1,7 +1,7 @@
 import { Component, effect, inject, signal } from '@angular/core';
 import { form } from '@angular/forms/signals';
-import { PRODUCT_INFLOW_SCHEMA_EXT } from '../../../../../schemas/product-inflow';
 import { getProductInflowInitData, getProductInflowValues } from '../../../../data/product-inflow';
+import { PRODUCT_INFLOW_SCHEMA_EXT } from '../../../../schemas/product-inflow';
 import { BaseFormz } from "../../../../templates/forms/form/form";
 import { ProductInflowDetailsTemplate } from "../../../../templates/forms/product/inflow/details/details";
 import { ProductInflowFormTemplate } from "../../../../templates/forms/product/inflow/inflow";

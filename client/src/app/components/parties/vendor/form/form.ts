@@ -1,7 +1,7 @@
 import { Component, effect, inject, signal } from '@angular/core';
 import { form } from '@angular/forms/signals';
-import { VENDOR_SCHEMA } from '../../../../../schemas/party-vendor';
 import { getVendorInitData, getVendorValues, VENDOR_INITIAL_DATA } from '../../../../data/party-vendor';
+import { VENDOR_SCHEMA } from '../../../../schemas/party-vendor';
 import { BaseFormz } from "../../../../templates/forms/form/form";
 import { VendorFormTemplate } from "../../../../templates/forms/parties/vendor/vendor";
 import { VendorType } from '../../../../types/form/party-vendor';

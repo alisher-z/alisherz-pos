@@ -1,7 +1,7 @@
 import { Component, effect, inject, signal } from '@angular/core';
 import { form } from '@angular/forms/signals';
-import { PRODUCT_TYPE_SCHEMA } from '../../../../../schemas/product-type';
 import { getProductTypeInitData, getProductTypeValues } from '../../../../data/product-type';
+import { PRODUCT_TYPE_SCHEMA } from '../../../../schemas/product-type';
 import { BaseFormz } from "../../../../templates/forms/form/form";
 import { ProductTypeFormTemplate } from '../../../../templates/forms/product/product-type/product-type';
 import { ProductTypeType } from '../../../../types/form/product-type';

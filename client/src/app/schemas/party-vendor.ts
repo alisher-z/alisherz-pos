@@ -1,7 +1,7 @@
 import { required, schema } from "@angular/forms/signals";
-import { VendorType } from "../app/types/form/party-vendor";
-import { email } from "../app/utils/custome-validations/email";
-import { maxLength } from "../app/utils/custome-validations/max.length";
+import { VendorType } from "../types/form/party-vendor";
+import { email } from "../utils/custome-validations/email";
+import { maxLength } from "../utils/custome-validations/max.length";
 
 export const VENDOR_SCHEMA = schema<VendorType>(p => {
    required(p.pk, { message: 'vendor primary key' });

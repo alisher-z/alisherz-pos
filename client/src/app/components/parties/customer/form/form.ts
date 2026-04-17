@@ -1,7 +1,7 @@
 import { Component, effect, inject, signal } from '@angular/core';
 import { form } from '@angular/forms/signals';
-import { CUSTOMER_SCHEMA } from '../../../../../schemas/party-customer';
 import { CUSTOMER_INITIAL_DATA, getCustomerInitData, getCustomerValues } from '../../../../data/party-customer';
+import { CUSTOMER_SCHEMA } from '../../../../schemas/party-customer';
 import { BaseFormz } from "../../../../templates/forms/form/form";
 import { CustomerFormTemplate } from '../../../../templates/forms/parties/customer/customer';
 import { CustomerType } from '../../../../types/form/party-customer';

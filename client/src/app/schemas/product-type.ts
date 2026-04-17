@@ -1,6 +1,6 @@
 import { required, schema } from "@angular/forms/signals";
-import { ProductTypeType } from "../app/types/form/product-type";
-import { maxLength } from "../app/utils/custome-validations/max.length";
+import { ProductTypeType } from "../types/form/product-type";
+import { maxLength } from "../utils/custome-validations/max.length";
 
 export const PRODUCT_TYPE_SCHEMA = schema<ProductTypeType>(p => {
    required(p.pk, { message: 'product type primary key' });

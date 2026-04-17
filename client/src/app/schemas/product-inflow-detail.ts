@@ -1,6 +1,6 @@
 import { apply, required, schema } from "@angular/forms/signals";
-import { ProductInflowDetailType, ProductInflowDetailTypeExt } from "../app/types/form/product-inflow-details";
-import { maxLength } from "../app/utils/custome-validations/max.length";
+import { ProductInflowDetailType, ProductInflowDetailTypeExt } from "../types/form/product-inflow-details";
+import { maxLength } from "../utils/custome-validations/max.length";
 import { PRODUCT_OUTFLOW_SCHEMA } from "./product-outflow";
 
 export const PRODUCT_INFLOW_DETAIL_SCHEMA = schema<ProductInflowDetailType>(p => {

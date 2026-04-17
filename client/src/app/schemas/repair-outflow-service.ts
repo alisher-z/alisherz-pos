@@ -1,6 +1,6 @@
 import { required, schema } from "@angular/forms/signals";
-import { RepairOutflowServiceType } from "../app/types/form/repair-outflow-service";
-import { maxLength } from "../app/utils/custome-validations/max.length";
+import { RepairOutflowServiceType } from "../types/form/repair-outflow-service";
+import { maxLength } from "../utils/custome-validations/max.length";
 
 export const REPAIR_OUTFLOW_SERVICE_SCHEMA = schema<RepairOutflowServiceType>(p => {
    required(p.pk, { message: 'outflow service primary key' });

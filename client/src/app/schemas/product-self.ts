@@ -1,6 +1,6 @@
 import { apply, hidden, required, schema } from "@angular/forms/signals";
-import { ProductSelfType, ProductSelfTypeExt } from "../app/types/form/product-self";
-import { maxLength } from "../app/utils/custome-validations/max.length";
+import { ProductSelfType, ProductSelfTypeExt } from "../types/form/product-self";
+import { maxLength } from "../utils/custome-validations/max.length";
 import { PRODUCT_PRICE_HISTORY_SCHEMA } from "./product-price-history";
 import { PRODUCT_TYPE_SCHEMA } from "./product-type";
 import { BRAND_SCHEMA } from "./public-brand";

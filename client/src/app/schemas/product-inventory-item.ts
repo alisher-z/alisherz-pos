@@ -1,6 +1,6 @@
 import { apply, hidden, required, schema, validate } from "@angular/forms/signals";
-import { ProductInventoryItemType, ProductInventoryItemTypeExt } from "../app/types/form/product-inventory-item";
-import { maxLength } from "../app/utils/custome-validations/max.length";
+import { ProductInventoryItemType, ProductInventoryItemTypeExt } from "../types/form/product-inventory-item";
+import { maxLength } from "../utils/custome-validations/max.length";
 import { PRODUCT_SELF_SCHEMA_EXT } from "./product-self";
 
 export const PRODUCT_INVENTORY_ITEM_SCHEMA = schema<ProductInventoryItemType>(p => {

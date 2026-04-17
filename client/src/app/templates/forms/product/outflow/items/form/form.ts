@@ -1,11 +1,11 @@
 import { CdkTrapFocus } from '@angular/cdk/a11y';
 import { Component, effect, inject, signal, untracked } from '@angular/core';
 import { form } from '@angular/forms/signals';
-import { PRODUCT_OUTFLOW_ITEM_SCHEMA } from '../../../../../../../schemas/product-outflow-item';
 import { getProductOutflowItemInitData, getProductOutflowItemValues } from '../../../../../../data/product-outflow-item';
 import { IconLink } from '../../../../../../elements/buttons/icon-link/icon-link';
 import { Icon } from '../../../../../../elements/buttons/icon/icon';
 import { NormalButton } from '../../../../../../elements/buttons/normal-button/normal-button';
+import { PRODUCT_OUTFLOW_ITEM_SCHEMA } from '../../../../../../schemas/product-outflow-item';
 import { ProductOutflowItemType } from '../../../../../../types/form/product-outflow-item';
 import { ProductOutflowItemTemplate } from '../item/item';
 import { ProductOutflowItemsService } from '../items.service';
