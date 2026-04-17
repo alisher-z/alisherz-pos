@@ -1,7 +1,7 @@
 import { Component, effect, inject, signal } from '@angular/core';
 import { form } from '@angular/forms/signals';
-import { getBrandInitData, getBrandValues } from '../../../../../data/public-brand';
 import { BRAND_SCHEMA } from '../../../../../schemas/public-brand';
+import { getBrandInitData, getBrandValues } from '../../../../data/public-brand';
 import { BaseFormz } from "../../../../templates/forms/form/form";
 import { BrandFormTemplate } from '../../../../templates/forms/public/brand/brand';
 import { BrandType } from '../../../../types/form/public-brand';

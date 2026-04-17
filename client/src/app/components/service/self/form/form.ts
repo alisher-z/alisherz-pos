@@ -1,7 +1,7 @@
 import { Component, effect, inject, signal } from '@angular/core';
 import { form, FormField } from '@angular/forms/signals';
-import { getServiceSelfInitData, getServiceSelfValue } from '../../../../../data/service-self';
 import { SERVICE_SELF_SCHEMA_EXT } from '../../../../../schemas/service-self';
+import { getServiceSelfInitData, getServiceSelfValue } from '../../../../data/service-self';
 import { NumberBoxInput } from "../../../../elements/inputs/number-box/number-box";
 import { BaseFormz } from "../../../../templates/forms/form/form";
 import { ServiceSelfTemplate } from "../../../../templates/forms/service/self/self";

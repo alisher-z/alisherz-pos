@@ -1,12 +1,12 @@
 import { CdkTrapFocus } from '@angular/cdk/a11y';
 import { Component, effect, inject, signal } from '@angular/core';
 import { form } from '@angular/forms/signals';
-import { getProductInventoryItemInitData, getProductInventoryItemValues } from '../../../../../../../data/product-inventory-item';
-import { getProductPriceHistoryInitDataOnly } from '../../../../../../../data/product-price-history';
-import { getProductSelfInitData } from '../../../../../../../data/product-self';
-import { getProductTypeInitData } from '../../../../../../../data/product-type';
-import { getBrandInitData } from '../../../../../../../data/public-brand';
 import { PRODUCT_INVENTORY_ITEM_SCHEMA_EXT } from '../../../../../../../schemas/product-inventory-item';
+import { getProductInventoryItemInitData, getProductInventoryItemValues } from '../../../../../../data/product-inventory-item';
+import { getProductPriceHistoryInitDataOnly } from '../../../../../../data/product-price-history';
+import { getProductSelfInitData } from '../../../../../../data/product-self';
+import { getProductTypeInitData } from '../../../../../../data/product-type';
+import { getBrandInitData } from '../../../../../../data/public-brand';
 import { IconLink } from "../../../../../../elements/buttons/icon-link/icon-link";
 import { Icon } from "../../../../../../elements/buttons/icon/icon";
 import { NormalButton } from "../../../../../../elements/buttons/normal-button/normal-button";

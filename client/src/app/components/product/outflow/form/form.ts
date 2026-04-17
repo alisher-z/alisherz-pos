@@ -1,7 +1,7 @@
 import { Component, effect, inject, signal } from '@angular/core';
 import { form } from '@angular/forms/signals';
-import { getProductOutflowInitData, getProductOutflowValues } from '../../../../../data/product-outflow';
 import { PRODUCT_OUTFLOW_SCHEMA_EXT } from '../../../../../schemas/product-outflow';
+import { getProductOutflowInitData, getProductOutflowValues } from '../../../../data/product-outflow';
 import { BaseFormz } from "../../../../templates/forms/form/form";
 import { ProductOutflowItemsTemplate } from '../../../../templates/forms/product/outflow/items/items';
 import { ProductOutflowFormTemplate } from '../../../../templates/forms/product/outflow/outflow';

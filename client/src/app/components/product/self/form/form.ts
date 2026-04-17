@@ -1,7 +1,7 @@
 import { Component, effect, inject, signal } from '@angular/core';
 import { form } from '@angular/forms/signals';
-import { getProductSelfInitData, getProductSelfValues } from '../../../../../data/product-self';
 import { PRODUCT_SELF_SCHEMA_EXT } from '../../../../../schemas/product-self';
+import { getProductSelfInitData, getProductSelfValues } from '../../../../data/product-self';
 import { BaseFormz } from "../../../../templates/forms/form/form";
 import { ProductSelfFormTemplate } from '../../../../templates/forms/product/self/self';
 import { ProductSelfType, ProductSelfTypeExt } from '../../../../types/form/product-self';
