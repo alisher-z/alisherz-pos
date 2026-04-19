@@ -1,7 +1,7 @@
 import { CdkOverlayOrigin } from "@angular/cdk/overlay";
 import { NgTemplateOutlet } from '@angular/common';
 import { Component, contentChild, effect, ElementRef, inject, input, model, output, TemplateRef, viewChild } from '@angular/core';
-import { FormValueControl, ValidationError, WithOptionalField } from '@angular/forms/signals';
+import { FormValueControl, ValidationError, WithOptionalFieldTree } from '@angular/forms/signals';
 import { v4 } from 'uuid';
 import { HttpBaseZ } from '../../../components/http-base';
 import { Popup } from "../../popup/popup";
@@ -22,7 +22,7 @@ export class Dropdown implements FormValueControl<string | null> {
   invalid = input<boolean>(false);
   touched = input<boolean>(false);
   required = input<boolean>(false);
-  errors = input<readonly WithOptionalField<ValidationError>[]>([]);
+  errors = input<readonly WithOptionalFieldTree<ValidationError>[]>([]);
 
   label = input<string | null>(null);
   displayField = input<string>('name', { alias: 'display_field' });

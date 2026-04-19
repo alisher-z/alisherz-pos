@@ -1,0 +1,52 @@
+:host {
+    height: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    grid-auto-rows: min-content;
+    gap: 1rem;
+
+    border: 1px solid var(--hover-background);
+    border-radius: 5px;
+
+    overflow: hidden;
+    overflow-y: auto;
+
+    scroll-snap-type: y mandatory;
+
+    padding: 1rem;
+    scroll-padding-top: 1rem;
+    scroll-behavior: smooth;
+}
+
+button {
+    &:hover {
+        cursor: pointer;
+        background-color: var(--hover-background);
+    }
+}
+
+.card {
+    border: 1px solid var(--hover-background);
+    border-radius: 3px;
+    padding: 1.5rem 2rem;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    position: relative;
+
+
+    .btn-delete {
+        border: none;
+        outline: none;
+        border-radius: 3px;
+        line-height: 1;
+        height: 2rem;
+        width: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+}

@@ -1,6 +1,13 @@
 @use 'scss/popup';
 @use 'scss/scroll';
 
+@font-face {
+    font-family: "Inter";
+    src: url(./assets/Inter-VariableFont_opsz\,wght.ttf) format(truetype);
+    font-weight: 100 900;
+    font-style: normal;
+}
+
 :root {
     --font-color: #333;
     --background: #f1eded;
@@ -24,9 +31,9 @@ html {
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 1.5rem;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 1.6;
     color: var(--font-color);
     width: 100vw;

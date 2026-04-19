@@ -1,16 +1,19 @@
 import { Component, inject, signal } from '@angular/core';
 import { form, FormField } from '@angular/forms/signals';
 import { HttpCustomerZ } from '../components/parties/customer/customer.http';
+import { HttpProductSelfZ } from '../components/product/self/self.http';
 import { Dropdown } from "../elements/inputs/dropdown/dropdown";
+import { SelectBox } from "../elements/inputs/select-box/select-box";
 
 @Component({
   selector: 'home',
-  imports: [Dropdown, FormField],
+  imports: [Dropdown, FormField, SelectBox],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
 export class Home {
   http = inject(HttpCustomerZ);
+  productHttp = inject(HttpProductSelfZ);
   m = signal<{ customer: string }>({ customer: '' });
   f = form(this.m);
 
@@ -24,6 +27,10 @@ export class Home {
   }
   textbox(input: any) {
     // console.log(input);
+  }
+
+  selected({ item, pk }: any) {
+    console.log(pk);
   }
 
   // e = effect(() => console.log(this.f().value()));

@@ -1,0 +1,6 @@
+@for(item of bridge.http_.chunks(); track item.pk){
+    <button class="card" (click)="select($event, item)">
+        <button class="btn-delete" (click)="childClick($event)">&times;</button>
+        <span>{{item.name}}</span>
+    </button>
+}
