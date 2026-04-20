@@ -4,10 +4,11 @@ import { HttpCustomerZ } from '../components/parties/customer/customer.http';
 import { HttpProductSelfZ } from '../components/product/self/self.http';
 import { Dropdown } from "../elements/inputs/dropdown/dropdown";
 import { SelectBox } from "../elements/inputs/select-box/select-box";
+import { OutflowFormTemplatez } from "../templates/forms/outflow/outflow";
 
 @Component({
   selector: 'home',
-  imports: [Dropdown, FormField, SelectBox],
+  imports: [Dropdown, FormField, SelectBox, OutflowFormTemplatez],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })

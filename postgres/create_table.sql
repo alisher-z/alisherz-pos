@@ -156,6 +156,7 @@ create table product.outflows(
     )
 );
 
+-- the old one which was the outflows was separated
 create table product.outflow_items(
     pk uuid primary key default uuid(),
     outflow uuid not null references product.outflows(pk),
@@ -165,6 +166,20 @@ create table product.outflow_items(
     notes text,
     check (char_length(notes)<=1000)
 );
+-- ends here
+
+-- the new one which is connected to new outflows table under public schema
+drop table product.outflow_items;
+create table product.outflow_items(
+    pk uuid primary key default uuid(),
+    outflow uuid not null references outflows(pk),
+    product uuid not null references product.selves(pk),
+    price uuid not null references product.price_histories(pk),
+    quantity int not null,
+    notes text,
+    check (char_length(notes)<=1000)
+);
+-- ends here
 
 create table product.inflows(
     pk uuid primary key default uuid(),
@@ -269,6 +284,27 @@ create table repair.outflows(
     )
 );
 
+-- the new outflow which is created in the public schema to make the outflows table general
+create table outflows(
+    pk uuid primary key default uuid(),
+    id citext unique,
+    customer uuid not null references party.customers(pk),
+    datetime timestamptz not null,
+    notes text,
+    check(
+        char_length(id)<=100 and
+        char_length(notes)<=1000
+    )
+);
+
+create table repair.outflow_tickets(
+    pk uuid primary key default uuid(),
+    outflow uuid not null references outflows(pk) on delete cascade,
+    ticket uuid not null references repair.tickets(pk) on delete cascade
+);
+-- ends here the new tables
+
+-- old one, connected to the stand-alone outflows
 create table repair.outflow_services(
     pk uuid primary key default uuid(),
     outflow uuid not null references repair.outflows(pk),
@@ -288,6 +324,29 @@ create table repair.outflow_items(
     notes text,
     check(char_length(notes)<=1000)
 );
+-- ends here
+
+-- new one, connected to the combined outflows
+create table repair.outflow_services(
+    pk uuid primary key default uuid(),
+    outflow uuid not null references outflows(pk),
+    service uuid not null references service.selves(pk),
+    price uuid not null references service.price_histories(pk),
+    duration interval not null,
+    notes text,
+    check(char_length(notes)<=1000)
+);
+drop table repair.outflow_items;
+create table repair.outflow_items(
+    pk uuid primary key default uuid(),
+    outflow uuid not null references outflows(pk),
+    product uuid not null references product.selves(pk),
+    price uuid not null references product.price_histories(pk),
+    quantity int not null,
+    notes text,
+    check(char_length(notes)<=1000)
+);
+-- ends here
 
 create table repair.inflows(
     pk uuid primary key default uuid(),

@@ -99,6 +99,16 @@ create trigger skip_if_unchanged
 before update on product.outflows for each row
 execute function audit.skip_if_unchanged();
 
+-- the new outflows table in public schema
+create trigger skip_if_unchanged
+before update on outflows for each row
+execute function audit.skip_if_unchanged();
+
+create trigger skip_if_unchanged
+before update on repair.outflow_tickets for each row
+execute function audit.skip_if_unchanged();
+-- ends here
+
 create trigger skip_if_unchanged
 before update on product.outflow_items for each row
 execute function audit.skip_if_unchanged();
@@ -282,6 +292,18 @@ create trigger tr_audit
 after insert or update or delete on product.outflows
 for each row
 execute function audit.tr_record();
+
+-- new outflows table which is created under public schema
+create trigger tr_audit
+after insert or update or delete on outflows
+for each row
+execute function audit.tr_record();
+
+create trigger tr_audit
+after insert or update or delete on repair.outflow_tickets
+for each row
+execute function audit.tr_record();
+-- ends here
 
 create trigger tr_audit
 after insert or update or delete on product.inventory_items

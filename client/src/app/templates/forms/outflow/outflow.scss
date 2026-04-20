@@ -1,0 +1,24 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+}
+
+section.form-fields {
+    display: flex;
+    height: min-content;
+}
+
+section.item-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: min-content 1fr;
+    height: 100%;
+    overflow: hidden;
+}
+
+selectz {
+    grid-row: 1/-1;
+    grid-column: 2/-1;
+}
