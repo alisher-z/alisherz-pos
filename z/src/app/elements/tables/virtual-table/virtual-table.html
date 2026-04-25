@@ -1,0 +1,54 @@
+<table class="grid">
+   @if(isHead()){
+      <thead class="grid sub">
+         <tr #headRow class="grid sub">
+            <ng-content select="[head]"/>
+            @if(isActionBtns()){
+               <th>Actions</th>
+            }
+         </tr>
+      </thead>
+   }
+   <tbody class="grid sub overflow">
+      <tr #viewport class="grid sub viewport" (scroll)="scroll($any($event.target))">
+         <td class="grid sub spacer">
+         <table class="grid sub virtual">
+            <tbody class="grid sub">
+               @for(item of visibleChunks(); track item.pk){
+               <tr 
+               #bodyRow 
+               class="grid sub"
+               [class.active]="getActiveRow(item.pk, bodyRow)"
+               (mousedown)="rowDownClick.emit({event:$event, item})"
+               >
+                  <ng-container 
+                     [ngTemplateOutlet]="trContent()" 
+                     [ngTemplateOutletContext]="{
+                           $implicit:item,
+                           index:$index
+                        }" 
+                     />
+                     @if(isActionBtns()){
+                        <td>
+                           <button type="button" (click)="editClick.emit({item})">Edit</button>
+                           <button type="button" (click)="deleteClick.emit({item})">Delete</button>
+                        </td>
+                     }
+               </tr>
+               }
+            </tbody>
+         </table>
+         </td>
+      </tr>
+   </tbody>
+   @if(isFoot()){
+      <tfoot>
+         <tr>
+            <ng-content select="[foot]"/>
+            @if(isActionBtns()){
+               <td></td>
+            }
+         </tr>
+      </tfoot>
+   }
+</table>

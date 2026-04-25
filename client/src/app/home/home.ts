@@ -35,4 +35,8 @@ export class Home {
   }
 
   // e = effect(() => console.log(this.f().value()));
+  me(id: string) {
+    this.active = id;
+  }
+  active: string = '';
 }

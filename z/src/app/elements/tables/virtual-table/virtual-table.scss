@@ -1,0 +1,71 @@
+:host {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+:host > table {
+  grid-template-columns: repeat(var(--columns, 0), max-content) 1fr;
+  column-gap: 5px;
+  height: 100%;
+  width: 100%;
+}
+
+:host ::ng-deep {
+  th,
+  td:not(.spacer) {
+    padding: 3px 7px;
+  }
+}
+
+table {
+  text-align: left;
+}
+
+.grid {
+  display: grid;
+}
+
+.sub {
+  grid-column: 1/-1;
+  grid-template-columns: subgrid;
+}
+
+.spacer {
+  height: var(--spacerHeight, 0);
+  grid-template-rows: min-content;
+}
+
+.viewport {
+  overflow: auto;
+  overflow-x: clip;
+  scroll-padding-top: 3.5rem;
+  scroll-padding-bottom: 3.5rem;
+}
+
+.overflow {
+  height: 100%;
+  overflow: hidden;
+}
+
+.virtual {
+  height: 100%;
+  grid-auto-rows: min-content;
+  transform: translate3d(0, var(--virtualPosition, 0), 0);
+  will-change: transform;
+
+  tr {
+    cursor: pointer;
+    transition: all 0.1s;
+  }
+
+  tr:hover {
+    background-color: var(--hover-background) !important;
+    color: var(--text-primary);
+  }
+
+  tr.active {
+    background-color: var(--active-background);
+    color: black;
+  }
+}

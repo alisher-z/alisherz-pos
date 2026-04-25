@@ -1,0 +1,65 @@
+@use 'scss/font-declaration';
+
+:root {
+  color-scheme: light dark;
+
+  --bg-main: light-dark(#ffffff, #0f0f0f);
+  --bg-surface: light-dark(#f2f2f2, #212121);
+  --text-primary: light-dark(#0f0f0f, #ffffff);
+  --text-secondary: light-dark(#2e2e2e, #e2e2e2);
+  --text-tertiary: light-dark(#606060, #aaaaaa);
+  --border: light-dark(#e5e5e5, rgba(255, 255, 255, 0.1));
+  --hover-background: light-dark(rgb(0 0 0 / 0.15), rgb(255 255 255 / 0.15));
+  --link-blue: #065fd4;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-weight: inherit;
+  color: inherit;
+  font-size: inherit;
+  outline: none;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-secondary);
+  transition:
+    background-color 0.15s,
+    color 0.15s;
+
+  // font-family: 'Inter', sans-serif;
+  font-family:
+    -apple-system, 'Segoe UI', BlinkMacSystemFont, Roboto, 'Helvetica Neue', Ubuntu, 'Noto Sans',
+    Arial, 'Odoo Unicode Support Noto', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol', 'Noto Color Emoji';
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1.6;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+}
+
+[data-theme='light'] {
+  color-scheme: light;
+}

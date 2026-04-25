@@ -1,0 +1,17 @@
+<button 
+[type]="type()"
+[disabled]="disabled()"
+[tabIndex]="tabindex()"
+
+(click)="tap.emit($event)"
+(mousedown)="tapdown.emit($event)"
+(mouseup)="tapup.emit($event)"
+>
+    <icon 
+    [iname]="iname()" 
+    [weight]="weight()" 
+    [filled]="filled()" 
+    [size]="size()" 
+    [color]="color()"
+    [disabled]="disabled()"/>
+</button>

@@ -1,0 +1,12 @@
+<http-vtable [http]="bridge.http">
+    <ng-container head>
+        <th class="name">Name</th>
+        <th class="phone">Phone</th>
+        <th class="email">Email</th>
+    </ng-container>
+    <ng-template #row let-customer>
+        <td class="name">{{customer.name}}</td>
+        <td class="phone">{{customer.phone}}</td>
+        <td class="email">{{customer.email}}</td>
+    </ng-template>
+</http-vtable>

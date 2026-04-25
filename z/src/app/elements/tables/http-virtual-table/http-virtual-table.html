@@ -1,0 +1,22 @@
+<vtable 
+[list]="items" 
+[isHead]="isHead()" 
+[isFoot]="isFoot()" 
+[activePK]="activePK()"
+[isActionBtns]="isActionBtns()" 
+[numberOfColumns]="numberOfColumns()"
+(nextChunk)="nextChunk()"
+(editClick)="editClick.emit($event)"
+(deleteClick)="deleteClick.emit($event)"
+(rowDownClick)="rowDownClick.emit($event)"
+>
+   <ng-container head>
+      <ng-content select="[head]"/>
+   </ng-container>
+   <ng-template #row let-item let-index>
+      <ng-container [ngTemplateOutlet]="row1()" [ngTemplateOutletContext]="{$implicit:item, index}"/>
+   </ng-template>
+   <ng-container foot>
+      <ng-content select="[foot]"/>
+   </ng-container>
+</vtable>

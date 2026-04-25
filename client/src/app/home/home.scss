@@ -17,3 +17,36 @@ td.email {
 section {
    height: 50rem;
 }
+
+// label {
+//    display: contents;
+
+//    &:has(input[type="checkbox"]:checked) tr {
+//       background-color: red;
+//    }
+// }
+
+table {
+   border-collapse: collapse;
+}
+
+// input[type="checkbox"] {
+//    display: none;
+// }
+
+label {
+   background-color: green;
+   position: absolute;
+   width: 100%;
+   top: 0;
+   left: 0;
+   z-index: 0;
+}
+
+tr {
+   position: relative;
+}
+
+td {
+   border: 1px solid black;
+}

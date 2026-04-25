@@ -1,0 +1,26 @@
+:host {
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  height: 100%;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 1rem;
+  nav {
+    display: flex;
+    gap: 1.5rem;
+  }
+}
+
+main {
+  border-top: 1px solid var(--border);
+  overflow: hidden;
+}
+
+aside {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}

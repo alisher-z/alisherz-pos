@@ -1,0 +1,38 @@
+:host {
+  --weight: 300;
+  --size: 2.4rem;
+  --fill: 0;
+  --color: blue;
+
+  display: flex;
+  font-family: 'icon';
+  font-style: normal !important;
+  font-weight: var(--weight);
+  font-size: var(--size);
+  color: var(--color);
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  margin: calc(var(--size) * -0.24);
+  transition: font-variation-settings 2s ease;
+
+  -webkit-font-smoothing: antialiased;
+
+  font-variation-settings:
+    'wght' var(--weight),
+    'opsz' var(--size),
+    'FILL' var(--fill),
+    'GRAD' 0;
+  &:hover {
+    font-variation-settings: 'GRAD' 900;
+  }
+}
+
+:host([disabled]) {
+  &:hover {
+    font-variation-settings: 'GRAD' 0;
+  }
+}
