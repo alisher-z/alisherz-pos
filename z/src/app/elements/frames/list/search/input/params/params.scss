@@ -1,0 +1,33 @@
+:host {
+  display: flex;
+  gap: 1rem;
+}
+
+div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: #f3f3f3;
+  padding-right: 1rem;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+button {
+  border: none;
+  outline: none;
+  background-color: var(--hover-background);
+  padding: 5px 1rem;
+  //   border-radius: 3px;
+}
+
+mark {
+  background: none;
+  font-size: 1.2rem;
+  color: var(--text-tertiary);
+  font-style: italic;
+}
+
+ibutton {
+  margin-left: 5px;
+}

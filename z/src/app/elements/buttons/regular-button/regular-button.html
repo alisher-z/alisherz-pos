@@ -1,0 +1,7 @@
+<button
+[type]="btnType()"
+[disabled]="disabled()"
+
+(click)="tap.emit($event)">
+    {{text()}}
+</button>

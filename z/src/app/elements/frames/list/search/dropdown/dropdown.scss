@@ -1,0 +1,30 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  width: var(--parent-width, 0);
+  overflow: hidden;
+  overflow-x: auto;
+}
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  text-align: left;
+  padding: 7px 1.5rem;
+  &:hover {
+    background-color: var(--hover-background);
+  }
+}
+.field {
+  font-weight: 700;
+}
+.search-text {
+  font-weight: 900;
+  font-style: italic;
+  color: purple;
+  white-space: nowrap;
+}
+
+.active {
+  background-color: var(--hover-background);
+}

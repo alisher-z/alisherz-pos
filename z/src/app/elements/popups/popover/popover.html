@@ -1,0 +1,13 @@
+<ng-template
+cdkConnectedOverlay
+[cdkConnectedOverlayOpen]="opened()"
+[cdkConnectedOverlayOrigin]="origin()"
+[cdkConnectedOverlayPositions]="positions"
+[cdkConnectedOverlayViewportMargin]="10"
+[cdkConnectedOverlayPush]="true"
+[cdkConnectedOverlayDisableClose]="true"
+(overlayOutsideClick)="close()"
+(overlayKeydown)="keydown($event)"
+(detach)="close()">
+    <ng-content/>
+</ng-template>

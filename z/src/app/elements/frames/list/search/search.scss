@@ -1,0 +1,12 @@
+:host {
+  display: flex;
+}
+
+search {
+  display: grid;
+  grid-template-columns: repeat(2, max-content) 1fr;
+}
+
+section {
+  display: flex;
+}

@@ -1,0 +1,27 @@
+:host {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: min-content 1fr;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+  padding: 1rem;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+}
+.right {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+section {
+  padding: 0 0.5rem;
+  overflow: hidden;
+}

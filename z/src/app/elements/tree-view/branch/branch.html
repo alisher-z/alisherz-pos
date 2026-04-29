@@ -1,0 +1,25 @@
+<details open>
+    <summary>
+        <icon iname="keyboard_double_arrow_right" size="2" />
+        <span>{{branch()}}</span>
+    </summary>
+    <ul>
+        @for(branch of leaves(); track branch.label){
+        @if(branch.field){
+        <li class="leaf">
+            <icon iname="last_page" size="1.7" />
+            <span>{{branch.label}}</span>
+        </li>
+        }
+
+        @else{
+        <li class="branch">
+            <tree-view-branch 
+            [branch]="branch.label" 
+            [leaves]="branch.children!" 
+            />
+        </li>
+        }
+        }
+    </ul>
+</details>

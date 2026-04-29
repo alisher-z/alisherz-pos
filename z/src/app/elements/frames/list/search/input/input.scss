@@ -1,0 +1,19 @@
+:host {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, max-content) 1fr;
+  align-items: center;
+  border: 1px solid var(--border);
+  padding: 5px 1rem;
+  border-radius: 3px;
+}
+
+ibutton {
+  margin-right: 1.5rem;
+}
+
+input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}

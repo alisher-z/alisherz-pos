@@ -1,4 +1,4 @@
-import { Component, effect, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { HttpVirtualTable } from '../../../../elements/tables/http-virtual-table/http-virtual-table';
 import { CustomerBridge } from '../../customer.bridge';
 
@@ -10,7 +10,4 @@ import { CustomerBridge } from '../../customer.bridge';
 })
 export class CustomerList {
   bridge = inject(CustomerBridge);
-  constructor() {
-    effect(() => console.log(this.bridge.customers()));
-  }
 }

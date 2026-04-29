@@ -1,4 +1,5 @@
 @use 'scss/font-declaration';
+@use 'scss/popover';
 
 :root {
   color-scheme: light dark;
@@ -25,6 +26,7 @@
 }
 
 html {
+  interpolate-size: allow-keywords;
   font-size: 62.5%;
 }
 
@@ -52,8 +54,14 @@ a {
   text-decoration: none;
 }
 
-ul {
+ul,
+summary {
   list-style: none;
+}
+
+summary,
+button {
+  cursor: pointer;
 }
 
 [data-theme='dark'] {

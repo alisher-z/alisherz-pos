@@ -1,0 +1,16 @@
+@for(p of bridge.searchParams()|keyvalue:()=>0; track p.key){
+<div>
+    <button>{{p.value.label}}</button>
+    @for(t of p.value.params; track t){
+    @if($last){
+    <span>{{t}}</span>
+    }
+
+    @else{
+    <span>{{t}}</span>
+    <mark> or </mark>
+    }
+    }
+    <ibutton iname="close" size="2" />
+</div>
+}

@@ -1,11 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { computed, inject, Injectable, signal } from '@angular/core';
-import { APIQuery } from './types';
+import { APIQuery, SearchFields } from './types';
 
 @Injectable()
 export abstract class HttpDeclarations {
   protected abstract namespace: string;
   protected abstract model: string;
+  abstract searchFields: SearchFields[];
 
   protected readonly url = 'http://localhost:3000';
   protected readonly http = inject(HttpClient);

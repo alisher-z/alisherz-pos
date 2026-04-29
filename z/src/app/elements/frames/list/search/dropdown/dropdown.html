@@ -1,0 +1,14 @@
+@for(search of bridge.searchFields(); track search.field){
+    <button 
+    [class.active]="$index === bridge.index()" 
+    (mousedown)="mousedown(search.label, $event)">
+        <span>Search</span>
+        &nbsp;
+        <span class="field">{{search.label}}</span>
+        &nbsp;
+        <span>for:</span>
+        &nbsp;
+        <span class="search-text">{{bridge.searchText()}}</span>
+    </button>
+}
+<div></div>

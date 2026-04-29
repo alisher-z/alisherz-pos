@@ -1,0 +1,14 @@
+<ibutton iname="search" size="2.3"/>
+
+@if(bridge.searchParams().size>0){
+    <list-frame-search-params/>
+}
+
+<input 
+#textbox 
+type="text" 
+
+(input)="input($event.target)" 
+(keydown.arrowdown)="arrowdown($event)" 
+(keydown.arrowup)="arrowup($event)"
+(keydown.enter)="enter($event)">

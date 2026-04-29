@@ -11,3 +11,8 @@ export type APIQuerySignal = {
   search: WritableSignal<string>;
   reset: WritableSignal<boolean>;
 } & Record<string, WritableSignal<any>>;
+
+export type SearchFields = {
+  field: string;
+  label: string;
+};

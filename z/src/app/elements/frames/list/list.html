@@ -1,0 +1,16 @@
+<header>
+    <aside class="left">
+        <buttonz type="button" text="New" />
+    </aside>
+
+    <list-frame-search [fields]="searchFields()"/>
+
+    <aside class="right">
+        <ibutton iname="view_list" size="2.3" weight="200" />
+        <ibutton iname="view_kanban" size="2.2" weight="200" />
+    </aside>
+</header>
+
+<section>
+    <ng-content />
+</section>
