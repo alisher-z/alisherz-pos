@@ -1,0 +1,13 @@
+:host {
+  display: flex;
+  width: 100%;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border);
+  padding: 3px 1rem;
+  border-radius: 3px;
+}
