@@ -9,6 +9,6 @@ export type SearchParamsMap = Map<
 
 export type TreeViewType = {
   label: string;
-  field?: string;
+  field: string;
   children?: TreeViewType[];
 };
