@@ -3,7 +3,7 @@
         <buttonz type="button" text="New" />
     </aside>
     <div class="space"></div>
-    <list-frame-filter />
+    <ng-content select="[filter]"/>
     <div class="space"></div>
     <aside class="right">
         <ibutton iname="view_list" size="2.3" weight="200" />
@@ -12,5 +12,5 @@
 </header>
 
 <section>
-    <ng-content />
+    <ng-content select="[body]"/>
 </section>

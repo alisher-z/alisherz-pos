@@ -1,3 +1,9 @@
 <list-frame [searchFields]="bridge.http.searchFields">
-    <router-outlet/>
+    <ng-container filter>
+        <customer-filter/>
+    </ng-container>
+
+    <ng-container body>
+        <router-outlet/>
+    </ng-container>
 </list-frame>
