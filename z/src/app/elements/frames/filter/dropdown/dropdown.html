@@ -1,0 +1,29 @@
+@for(field of bridge.searchFields(); track field.field){
+<ng-container *ngTemplateOutlet="button; context:{
+    $implicit:field,
+    index:$index
+    }"
+/>
+}
+
+<ng-template #button let-field let-index="index">
+    <button [class.active]="index === bridge.searchIndex()">
+        <ng-container 
+        *ngTemplateOutlet="content; context:{$implicit:field}"
+        />
+    </button>
+</ng-template>
+
+<ng-template #content let-field>
+    <span>Search</span>
+
+    <span class="label">
+        {{field.label}}
+    </span>
+
+    <span>for:</span>
+
+    <span class="text">
+        {{bridge.searchText()}}
+    </span>
+</ng-template>

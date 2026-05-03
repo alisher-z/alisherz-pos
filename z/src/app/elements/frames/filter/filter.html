@@ -1,3 +1,31 @@
-<form>
-    <input type="text">
+<form cdkOverlayOrigin #form="cdkOverlayOrigin">
+    <ibutton iname="search" size="2.3"/>
+    <ng-container *ngTemplateOutlet="params"/>
+    <input filter-input type="text">
+    <ibutton iname="tune" size="2.3"/>
 </form>
+
+<popover [origin]="form">
+    <filter-dropdown class="popover-style"/>
+</popover>
+
+<ng-template #params>
+    <ul>
+        @for(p of bridge.searchParams()|keyvalue:()=>0; track p.key){
+        <ng-container *ngTemplateOutlet="li; context:{$implicit:p.value}"/>
+        }
+    </ul>
+</ng-template>
+
+<ng-template #li let-param>
+    <li>
+        <button>{{param.label}}</button>
+        @for(t of param.params; track t){
+        <span>{{t}}</span>
+        @if(!$last){
+        <mark>or</mark>
+        }
+        }
+        <ibutton iname="close" size="2"/>
+    </li>
+</ng-template>

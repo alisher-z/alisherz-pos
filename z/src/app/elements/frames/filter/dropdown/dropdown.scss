@@ -1,0 +1,40 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 1rem 0;
+  width: var(--parent-width, 0);
+  overflow: hidden;
+  overflow-x: auto;
+}
+
+button {
+  cursor: pointer;
+  text-align: left;
+  padding: 5px 1.5rem;
+  border: none;
+  background: none;
+  white-space: nowrap;
+  &:hover {
+    background-color: var(--hover-background);
+  }
+
+  &.active {
+    background-color: var(--hover-background);
+  }
+}
+
+span {
+  color: var(--text-tertiary);
+}
+
+span.label {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+span.text {
+  font-weight: 900;
+  font-style: italic;
+  color: #730073;
+}
