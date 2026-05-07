@@ -18,6 +18,10 @@ export class FilterBridge {
     this.popover().open();
   }
 
+  closeDropdown() {
+    this.popover().close();
+  }
+
   updateSearchParams() {
     const { label, field } = this.searchFields()[this.searchIndex()];
     const text = this.searchText();

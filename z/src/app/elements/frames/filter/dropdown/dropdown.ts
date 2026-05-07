@@ -13,4 +13,13 @@ import { FilterBridge } from '../filter.bridge';
 })
 export class FilterDropdown {
   bridge = inject(FilterBridge);
+
+  click(index: number, e: MouseEvent) {
+    e.preventDefault();
+
+    this.bridge.searchIndex.set(index);
+    this.bridge.closeDropdown();
+    this.bridge.updateSearchParams();
+    this.bridge.resetSearch();
+  }
 }

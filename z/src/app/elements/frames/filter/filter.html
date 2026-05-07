@@ -26,6 +26,12 @@
         <mark>or</mark>
         }
         }
-        <ibutton iname="close" size="2"/>
+        <ibutton iname="close" size="2" (tapdown)="removeParam($event, param)"/>
     </li>
 </ng-template>
+
+<filter-modal>
+    <ng-container body>
+        <ng-content select="[body]"/>
+    </ng-container>
+</filter-modal>

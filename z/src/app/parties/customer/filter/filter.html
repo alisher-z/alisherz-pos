@@ -1,1 +1,5 @@
-<filter [fields]="searchFields"/>
+<filter [fields]="searchFields" [form]="$any(formz)">
+    <ng-container body>
+        <customer-filter-modal [form]="formz"/>
+    </ng-container>
+</filter>
