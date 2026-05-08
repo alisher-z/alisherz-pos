@@ -2,7 +2,7 @@
     <ibutton iname="search" size="2.3"/>
     <ng-container *ngTemplateOutlet="params"/>
     <input filter-input type="text">
-    <ibutton iname="tune" size="2.3"/>
+    <ibutton iname="tune" size="2.3" (tap)="dialogOpened = true"/>
 </form>
 
 <popover [origin]="form">
@@ -30,7 +30,7 @@
     </li>
 </ng-template>
 
-<filter-modal>
+<filter-modal [(opened)]="dialogOpened">
     <ng-container body>
         <ng-content select="[body]"/>
     </ng-container>

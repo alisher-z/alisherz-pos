@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-modal',
+  selector: 'modalz',
   imports: [],
   templateUrl: './modal.html',
   styleUrl: './modal.scss',
 })
-export class Modal {}
+export class ModalZ {
+
+}

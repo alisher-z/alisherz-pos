@@ -1,3 +1,15 @@
-<form (submit)="submit($event)">
-    <ng-content select="[body]"/>
-</form>
+<dialog #dialog (keydown.escape)="dialogEscape($event)">
+    <form (submit)="submit($event)">
+        <header>
+            <icon iname="grading" size="2"/>
+            <ibutton iname="close" size="2" (tap)="close()"/>
+        </header>
+        <section>
+            <ng-content select="[body]" />
+        </section>
+        <footer>
+            <buttonz type="button" text="Cancel"/>
+            <buttonz type="submit" text="Filter"/>
+        </footer>
+    </form>
+</dialog>

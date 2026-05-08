@@ -37,6 +37,7 @@ export class Filter {
   popover = viewChild.required(Popover);
 
   resizeObserver: ResizeObserver | null = null;
+  dialogOpened = false;
 
   constructor() {
     this.bridge.popover = this.popover;
