@@ -1,7 +1,6 @@
 import { CdkOverlayOrigin } from '@angular/cdk/overlay';
 import { KeyValuePipe, NgTemplateOutlet } from '@angular/common';
-import { Component, ElementRef, inject, input, viewChild } from '@angular/core';
-import { FieldTree } from '@angular/forms/signals';
+import { Component, effect, ElementRef, inject, input, model, untracked, viewChild } from '@angular/core';
 import { SearchFields } from '../../../http/types';
 import { IconButton } from '../../buttons/icon-button/icon-button';
 import { Popover } from '../../popups/popover/popover';
@@ -29,7 +28,7 @@ import { FilterModal } from './modal/modal';
 })
 export class Filter {
   searchFields = input.required<SearchFields[]>({ alias: 'fields' });
-  form = input.required<FieldTree<any, string | number>>();
+  form = model.required<any>();
 
   bridge = inject(FilterBridge);
   elRef = inject(ElementRef);
@@ -83,4 +82,16 @@ export class Filter {
     this.resizeObserver.disconnect();
     this.resizeObserver = null;
   }
+
+  private setParamsForm() {
+    const paramsMap = this.bridge.searchParams();
+    const formValues = structuredClone(untracked(this.form));
+
+    for (const [key, value] of paramsMap)
+      formValues[key] = [...new Set([...formValues[key], ...value.params])];
+
+    this.form.set(formValues);
+  }
+
+  e = effect(() => this.setParamsForm());
 }

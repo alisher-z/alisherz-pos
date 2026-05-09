@@ -27,5 +27,8 @@ export class CustomerFilter {
     return { id: [], name: [], phone: [], email: [], address: [], notes: [] }
   }
 
-  e = effect(() => console.log(this.formz().value()))
+  e = effect(() => {
+    const form = this.formz().value();
+    console.log(form);
+  })
 }
