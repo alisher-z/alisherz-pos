@@ -1,6 +1,6 @@
 import { CdkOverlayOrigin } from '@angular/cdk/overlay';
 import { KeyValuePipe, NgTemplateOutlet } from '@angular/common';
-import { Component, effect, ElementRef, inject, input, model, untracked, viewChild } from '@angular/core';
+import { Component, effect, ElementRef, inject, input, model, output, untracked, viewChild } from '@angular/core';
 import { SearchFields } from '../../../http/types';
 import { IconButton } from '../../buttons/icon-button/icon-button';
 import { Popover } from '../../popups/popover/popover';
@@ -30,6 +30,8 @@ export class Filter {
   searchFields = input.required<SearchFields[]>({ alias: 'fields' });
   form = model.required<any>();
 
+  done = output<void>();
+
   bridge = inject(FilterBridge);
   elRef = inject(ElementRef);
 
@@ -41,19 +43,9 @@ export class Filter {
   constructor() {
     this.bridge.popover = this.popover;
     this.bridge.searchFields = this.searchFields;
+    this.bridge.form = this.form;
 
-    // effect(() => {
-    //   const paramsMap = this.bridge.searchParams();
-    //   const formValues: any = structuredClone(untracked(untracked(this.form)().value));
-
-    //   for (const [key, value] of paramsMap)
-    //     formValues[key] = [
-    //       ...formValues[key],
-    //       ...value.params
-    //     ];
-
-    //   untracked(this.form)().value.set(formValues);
-    // });
+    effect(() => this.setParamsForm());
   }
 
   ngAfterViewInit() {
@@ -69,11 +61,40 @@ export class Filter {
     this.destroyObserver();
   }
 
+  submit(e: SubmitEvent) {
+    e.preventDefault();
+    this.done.emit();
+  }
+
   removeParam(e: MouseEvent, param: any) {
     e.preventDefault();
+
     this.bridge.searchParams().delete(param.field);
+    this.form.update(value => {
+      value[param.field] = [];
+      return structuredClone(value);
+    });
+
     this.bridge.closeDropdown();
     this.bridge.resetSearch();
+  }
+
+  modelDone(value: any) {
+    const paramsMap = this.bridge.searchParams()
+    for (const key in value) {
+      if (value[key].length < 1) {
+        paramsMap.delete(key);
+        continue;
+      }
+
+      const { label, field } = this.searchFields().find(f => f.field === key)!;
+      paramsMap.set(field, {
+        label, field, params: new Set(value[key])
+      });
+    }
+
+    this.bridge.searchParams.set(new Map(paramsMap));
+    this.done.emit();
   }
 
   private destroyObserver() {
@@ -87,11 +108,15 @@ export class Filter {
     const paramsMap = this.bridge.searchParams();
     const formValues = structuredClone(untracked(this.form));
 
-    for (const [key, value] of paramsMap)
-      formValues[key] = [...new Set([...formValues[key], ...value.params])];
+    for (const [key, value] of paramsMap) {
+      const params = new Set([
+        ...formValues[key],
+        ...value.params
+      ]);
+
+      formValues[key] = [...params];
+    }
 
     this.form.set(formValues);
   }
-
-  e = effect(() => this.setParamsForm());
 }

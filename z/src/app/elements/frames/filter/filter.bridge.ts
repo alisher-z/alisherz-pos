@@ -1,4 +1,4 @@
-import { Injectable, InputSignal, Signal, signal } from '@angular/core';
+import { Injectable, InputSignal, ModelSignal, Signal, signal } from '@angular/core';
 import { SearchFields } from '../../../http/types';
 import { SearchParamsMap } from '../../../utils/types';
 import { Popover } from '../../popups/popover/popover';
@@ -7,6 +7,7 @@ import { Popover } from '../../popups/popover/popover';
 export class FilterBridge {
   popover!: Signal<Popover>;
   searchFields!: InputSignal<SearchFields[]>;
+  form!: ModelSignal<any>;
   searchParams = signal<SearchParamsMap>(new Map());
   searchText = signal('');
   searchIndex = signal(0);
@@ -32,10 +33,10 @@ export class FilterBridge {
       params_
         ? params_.params.add(text)
         : params.set(field, {
-            label,
-            field,
-            params: new Set([text]),
-          });
+          label,
+          field,
+          params: new Set([text]),
+        });
 
       return new Map(params);
     });

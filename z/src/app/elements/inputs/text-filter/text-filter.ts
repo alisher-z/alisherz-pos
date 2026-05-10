@@ -37,6 +37,11 @@ export class TextFilter {
 		this.add(<any>e.target);
 	}
 
+	blur(e: FocusEvent) {
+		if ((<any>e.target).value)
+			this.add(<any>e.target);
+	}
+
 	tapdown(index: number, e: MouseEvent) {
 		e.preventDefault();
 		this.remove(index);

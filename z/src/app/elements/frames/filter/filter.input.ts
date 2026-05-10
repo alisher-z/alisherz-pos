@@ -6,8 +6,10 @@ import { FilterBridge } from './filter.bridge';
   host: {
     '(input)': 'input($any($event.target))',
     '(keydown.enter)': 'enter($event)',
+    '(keydown.tab)': 'enter($event)',
     '(keydown.arrowdown)': 'arrowdown($event)',
     '(keydown.arrowup)': 'arrowup($event)',
+    '(keydown.backspace)': 'backspace($event)'
   },
 })
 export class FilterInput {
@@ -24,9 +26,9 @@ export class FilterInput {
   }
 
   enter(e: Event) {
-    e.preventDefault();
     if (!this.bridge.searchText()) return;
 
+    e.preventDefault();
     this.bridge.updateSearchParams();
     this.bridge.closeDropdown();
     this.bridge.resetSearch();
@@ -42,6 +44,22 @@ export class FilterInput {
     this.decreaseIndex();
   }
 
+  backspace({ target }: Event) {
+    const paramsMap = this.bridge.searchParams();
+
+    if ((<HTMLInputElement>target).value || paramsMap.size < 1) return;
+
+    const lastKey = [...paramsMap.keys()].at(-1)!;
+
+    paramsMap.delete(lastKey);
+    this.bridge.form.update(value => {
+      value[lastKey] = [];
+      return structuredClone(value);
+    });
+    // this.bridge.searchParams.set(new Map(paramsMap));
+    this.bridge.closeDropdown();
+  }
+
   private increaseIndex() {
     const index = this.bridge.searchIndex();
     const maxIndex = this.bridge.searchFields().length - 1;
@@ -50,7 +68,6 @@ export class FilterInput {
   }
 
   private decreaseIndex() {
-    console.log('this');
     const index = this.bridge.searchIndex();
     if (index > 0) this.bridge.searchIndex.set(index - 1);
   }

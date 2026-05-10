@@ -12,6 +12,7 @@
   <input 
   type="text" 
   [id]="id" 
+  (blur)="blur($event)"
   (keydown)="keydown($event)"
   (keydown.tab)="onTab($event)" 
   (keydown.enter)="onEnter($event)"

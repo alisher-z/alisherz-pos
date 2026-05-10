@@ -1,11 +1,11 @@
-<form cdkOverlayOrigin #form="cdkOverlayOrigin">
+<form cdkOverlayOrigin #searchForm="cdkOverlayOrigin" (submit)="submit($event)">
     <ibutton iname="search" size="2.3"/>
     <ng-container *ngTemplateOutlet="params"/>
     <input filter-input type="text">
     <ibutton iname="tune" size="2.3" (tap)="dialogOpened = true"/>
 </form>
 
-<popover [origin]="form">
+<popover [origin]="searchForm">
     <filter-dropdown class="popover-style"/>
 </popover>
 
@@ -30,7 +30,7 @@
     </li>
 </ng-template>
 
-<filter-modal [(opened)]="dialogOpened">
+<filter-modal [(opened)]="dialogOpened" [(form)]="form" (done)="modelDone($event)">
     <ng-container body>
         <ng-content select="[body]"/>
     </ng-container>

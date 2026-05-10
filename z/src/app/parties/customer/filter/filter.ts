@@ -23,12 +23,16 @@ export class CustomerFilter {
   readonly modelz = model<CustomerFilterModalFields>(this.getInitData());
   readonly formz = form(this.modelz);
 
+  done() {
+    console.log('everything is done!');
+  }
+
   private getInitData() {
     return { id: [], name: [], phone: [], email: [], address: [], notes: [] }
   }
 
   e = effect(() => {
-    const form = this.formz().value();
-    console.log(form);
+    // const form = this.formz().value();
+    // console.log(form);
   })
 }

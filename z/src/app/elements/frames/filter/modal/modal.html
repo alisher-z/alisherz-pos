@@ -8,7 +8,7 @@
             <ng-content select="[body]" />
         </section>
         <footer>
-            <buttonz type="button" text="Cancel"/>
+            <buttonz type="button" text="Cancel" (tap)="close()"/>
             <buttonz type="submit" text="Filter"/>
         </footer>
     </form>
