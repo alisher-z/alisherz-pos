@@ -1,6 +1,7 @@
-import { Component, input } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FieldTree, FormField } from '@angular/forms/signals';
 import { TextFilter } from '../../../../elements/inputs/text-filter/text-filter';
+import { CustomerFilterFields, CustomerFilterStructure } from '../../utils/filter';
 
 @Component({
   selector: 'customer-filter-modal',
@@ -9,14 +10,10 @@ import { TextFilter } from '../../../../elements/inputs/text-filter/text-filter'
   styleUrl: './modal.scss',
 })
 export class CustomerFilterModal {
-  form = input.required<FieldTree<CustomerFilterModalFields, string | number>>();
-}
+  structure = inject(CustomerFilterStructure);
+  form: FieldTree<CustomerFilterFields, string | number>;
 
-export interface CustomerFilterModalFields {
-  id: string[];
-  name: string[];
-  phone: string[];
-  email: string[];
-  address: string[];
-  notes: string[];
+  constructor() {
+    this.form = this.structure.form;
+  }
 }

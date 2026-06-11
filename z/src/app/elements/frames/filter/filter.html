@@ -1,6 +1,6 @@
 <form cdkOverlayOrigin #searchForm="cdkOverlayOrigin" (submit)="submit($event)">
     <ibutton iname="search" size="2.3"/>
-    <ng-container *ngTemplateOutlet="params"/>
+    <filter-params/>
     <input filter-input type="text">
     <ibutton iname="tune" size="2.3" (tap)="dialogOpened = true"/>
 </form>
@@ -9,7 +9,7 @@
     <filter-dropdown class="popover-style"/>
 </popover>
 
-<ng-template #params>
+<!-- <ng-template #params>
     <ul>
         @for(p of bridge.searchParams()|keyvalue:()=>0; track p.key){
         <ng-container *ngTemplateOutlet="li; context:{$implicit:p.value}"/>
@@ -28,9 +28,9 @@
         }
         <ibutton iname="close" size="2" (tapdown)="removeParam($event, param)"/>
     </li>
-</ng-template>
+</ng-template> -->
 
-<filter-modal [(opened)]="dialogOpened" [(form)]="form" (done)="modelDone($event)">
+<filter-modal [(opened)]="dialogOpened" [(form)]="bridge.form_" (done)="modelSubmit($event)">
     <ng-container body>
         <ng-content select="[body]"/>
     </ng-container>

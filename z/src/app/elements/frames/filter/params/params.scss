@@ -1,0 +1,32 @@
+ul {
+  display: flex;
+  gap: 5px;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: #f3f3f3;
+  padding-right: 1rem;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+button {
+  border: none;
+  background-color: var(--hover-background);
+  height: 100%;
+  padding: 0 1rem;
+}
+
+span {
+  white-space: nowrap;
+}
+
+mark {
+  background: none;
+  font-size: 1.2rem;
+  color: var(--text-tertiary);
+  font-style: italic;
+}

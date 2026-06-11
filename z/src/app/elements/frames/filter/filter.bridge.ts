@@ -1,12 +1,39 @@
-import { Injectable, InputSignal, ModelSignal, Signal, signal } from '@angular/core';
+import { effect, Injectable, InputSignal, ModelSignal, Signal, signal, WritableSignal } from '@angular/core';
 import { SearchFields } from '../../../http/types';
 import { SearchParamsMap } from '../../../utils/types';
 import { Popover } from '../../popups/popover/popover';
+import { FilterBluePrint } from './utils/filter.blueprint';
 
 @Injectable()
 export class FilterBridge {
+  constructor() {
+    effect(() => {
+      const structure = this.structure();
+
+      this.form_ = structure.form().value;
+      this.searchFields.set(structure.fields);
+    });
+  }
+
   popover!: Signal<Popover>;
-  searchFields!: InputSignal<SearchFields[]>;
+  structure!: InputSignal<FilterBluePrint<any>>;
+  form_!: WritableSignal<any>;
+
+  searchFields = signal<SearchFields[]>([]);
+
+  removeSearchParam(key: string) {
+    this.searchParams()
+      .delete(key);
+
+    this.form_.update(value => {
+      value[key] = [];
+      return structuredClone(value);
+    });
+  }
+
+
+
+
   form!: ModelSignal<any>;
   searchParams = signal<SearchParamsMap>(new Map());
   searchText = signal('');

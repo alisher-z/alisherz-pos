@@ -1,0 +1,31 @@
+<ul>
+@for(p of params()|keyvalue:()=>0; track p.key){
+    <ng-container 
+    [ngTemplateOutlet]="param" 
+    [ngTemplateOutletContext]="{$implicit:p.value}"
+    />
+}
+</ul>
+
+
+<ng-template #param let-p>
+    <li>
+        <button>{{p.label}}</button>
+        <ng-container 
+        [ngTemplateOutlet]="values" 
+        [ngTemplateOutletContext]="{$implicit:p.params}"
+        />
+        <ibutton iname="close" size="2" (tapdown)="remove($event, p)"/>
+    </li>
+</ng-template>
+
+
+<ng-template #values let-values>
+@for(v of values; track v){
+    <span>{{v}}</span>
+
+    @if(!$last){
+    <mark>or</mark>
+    }
+}
+</ng-template>

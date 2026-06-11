@@ -1,5 +1,5 @@
-<filter [fields]="searchFields" [(form)]="formz().value" (done)="done()">
+<filter [structure]="structure" (done)="done()">
     <ng-container body>
-        <customer-filter-modal [form]="formz"/>
+        <customer-filter-modal/>
     </ng-container>
 </filter>
