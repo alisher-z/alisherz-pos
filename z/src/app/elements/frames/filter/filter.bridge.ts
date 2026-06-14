@@ -13,6 +13,7 @@ export class FilterBridge {
       this.form_ = structure.form().value;
       this.searchFields.set(structure.fields);
     });
+    console.log('hello world');
   }
 
   popover!: Signal<Popover>;
